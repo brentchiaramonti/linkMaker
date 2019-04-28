@@ -6,7 +6,7 @@ xhttp.onreadystatechange = function() {
         populateWebpage(this);
     }
 };
-xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/LaunchKitHelper/master/dental.xml", true);
+xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/dental.xml", true);
 xhttp.send();
 
 function populateWebpage(xml){
