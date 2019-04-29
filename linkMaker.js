@@ -56,7 +56,7 @@ function generateLinks(name, dict) {
 			output.innerHTML = output.innerHTML + makeLink(checkboxName, url, additional);
 		}
 	}
-	output.innerHTML = output.innerHTML = "&lt;/ul>"
+	output.innerHTML = output.innerHTML + "&lt;/ul>"
 }
 
 function makeLink(name, link, extra){
