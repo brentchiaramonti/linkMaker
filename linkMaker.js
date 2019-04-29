@@ -47,6 +47,7 @@ function generateLinks(name, dict) {
 	var output = document.getElementById("output");
 	var checkboxName;
 	console.log(dict);
+	output.innerHTML = output.innerHTML = "&lt;ul><br/>"
 	for(var i = 0; i < checkboxes.length; i++){
 		if(checkboxes[i].checked){
 			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML);
@@ -55,6 +56,7 @@ function generateLinks(name, dict) {
 			output.innerHTML = output.innerHTML + makeLink(checkboxName, url, additional);
 		}
 	}
+	output.innerHTML = output.innerHTML = "&lt;/ul>"
 }
 
 function makeLink(name, link, extra){
