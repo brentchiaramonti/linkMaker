@@ -8,7 +8,8 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/dental.xml", true);
 xhttp.send();
-
+xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
+xhttp.send();
 function populateWebpage(xml){
 	var x, i, txt, xmlDoc, title, name, xmlFormated;
 
