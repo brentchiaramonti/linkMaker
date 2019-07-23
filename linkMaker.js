@@ -1,15 +1,36 @@
-var xhttp;
+var xhttp, xhttp2;
 xhttp = new XMLHttpRequest();
+xhttp2 = new XMLHttpRequest();
+xhttp3 = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         populateWebpage(this);
     }
 };
+
+xhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        populateWebpage(this);
+    }
+};
+xhttp3.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        populateWebpage(this);
+    }
+};
 xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/dental.xml", true);
 xhttp.send();
-xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
-xhttp.send();
+
+
+xhttp2.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
+xhttp2.send();
+
+xhttp3.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
+xhttp3.send();
+
+
+
 function populateWebpage(xml){
 	var x, i, txt, xmlDoc, title, name, xmlFormated;
 
@@ -35,7 +56,12 @@ function populateWebpage(xml){
 		txt += "<label><input type=\"checkbox\" name=\"" + name + "\">" + text + "</label><br>";
 		dict[text] = {url, additional};
 	}
-	document.getElementById("checkboxes").innerHTML = txt;
+
+	var btn = document.createElement("BUTTON");
+	btn.innerHTML = title;
+	btn.onclick = function() {displayCheckboxes(txt);};
+	document.getElementById("buttons").appendChild(btn);
+
 
 	document.getElementById("generate").onclick = function(){generateLinks(name, dict);};
 	document.getElementById("selectAll").onclick = function(){selectAll(name);};
@@ -86,4 +112,8 @@ function copyText(){
 	var el = document.getElementById("output");
 	el.select();
 	document.execCommand('copy');
+}
+
+function displayCheckboxes(text) {
+	document.getElementById('checkboxes').innerHTML = text;
 }
