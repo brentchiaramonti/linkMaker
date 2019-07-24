@@ -59,21 +59,20 @@ function populateWebpage(xml){
 
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = title;
-	btn.onclick = function() {displayCheckboxes(txt);};
+	btn.onclick = function() {displayCheckboxes(txt, dict, name);};
 	document.getElementById("buttons").appendChild(btn);
 
-
-	document.getElementById("generate").onclick = function(){generateLinks(name, dict);};
-	document.getElementById("selectAll").onclick = function(){selectAll(name);};
-	document.getElementById("selectNone").onclick = function(){selectNone(name);};
 }
+
+
+
 
 
 function generateLinks(name, dict) {
 	var checkboxes = document.getElementsByName(name);
 	var output = document.getElementById("output");
 	var checkboxName;
-	console.log(dict);
+
 	output.innerHTML = output.innerHTML = "&lt;ul><br/>"
 	for(var i = 0; i < checkboxes.length; i++){
 		if(checkboxes[i].checked){
@@ -114,6 +113,22 @@ function copyText(){
 	document.execCommand('copy');
 }
 
-function displayCheckboxes(text) {
+
+function displayCheckboxes(text, dict, name) {
+	var generateBtn = document.createElement("BUTTON");
+	var selectAllBtn = document.createElement("BUTTON");
+	var selectNoneBtn = document.createElement("BUTTON");
+
+	generateBtn.onclick = function(){generateLinks(name, dict);};
+	selectAllBtn.onclick = function(){selectAll(name);};
+	selectNoneBtn.onclick = function(){selectNone(name);};
+
+	generateBtn.innerHTML = "Generate";
+	selectAllBtn.innerHTML = "Select All";
+	selectNoneBtn.innerHTML = "Select None";
+
 	document.getElementById('checkboxes').innerHTML = text;
+	document.getElementById('checkboxes').prepend(selectNoneBtn);
+	document.getElementById('checkboxes').prepend(selectAllBtn);
+	document.getElementById('checkboxes').prepend(generateBtn);
 }
