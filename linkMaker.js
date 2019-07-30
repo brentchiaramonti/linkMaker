@@ -1,33 +1,23 @@
-var xhttp, xhttp2;
-xhttp = new XMLHttpRequest();
-xhttp2 = new XMLHttpRequest();
-xhttp3 = new XMLHttpRequest();
+var requests;
 
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        populateWebpage(this);
-    }
-};
+var links = [
+"dental.xml",
+"test.xml"
+];
 
-xhttp2.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        populateWebpage(this);
-    }
-};
-xhttp3.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        populateWebpage(this);
-    }
-};
-xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/dental.xml", true);
-xhttp.send();
+for (var i = 0; i < links.length; i++){
+	requests[i] = new XMLHttpRequest();
 
+	requests[i].onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        populateWebpage(this);
+	    }
+	};
 
-xhttp2.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
-xhttp2.send();
+	xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + links[i], true);
+	xhttp.send();
 
-xhttp3.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/test.xml", true);
-xhttp3.send();
+}
 
 
 
