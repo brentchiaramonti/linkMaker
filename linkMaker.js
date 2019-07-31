@@ -1,9 +1,11 @@
-var requests;
-
 var links = [
 "dental.xml",
-"test.xml"
+"derm.xml"
 ];
+
+var requests = new Array(links.length);
+
+
 
 for (var i = 0; i < links.length; i++){
 	requests[i] = new XMLHttpRequest();
@@ -14,8 +16,8 @@ for (var i = 0; i < links.length; i++){
 	    }
 	};
 
-	xhttp.open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + links[i], true);
-	xhttp.send();
+	requests[i].open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + links[i], true);
+	requests[i].send();
 
 }
 
