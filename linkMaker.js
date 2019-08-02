@@ -45,13 +45,14 @@ function populateWebpage(xml){
 		catch(err) {
 			additional = "";
 		}
-		txt += "<label><input type=\"checkbox\" name=\"" + name + "\">" + text + "</label><br>";
+		txt += "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)'>" + text + "</label><br>";
 		dict[text] = {url, additional};
 	}
 
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = title;
-	btn.onclick = function() {displayCheckboxes(txt, dict, name);};
+	btn.name = "topButton";
+	btn.onclick = function() {displayCheckboxes(txt, dict, name, this);};
 	document.getElementById("buttons").appendChild(btn);
 
 }
@@ -65,7 +66,7 @@ function generateLinks(name, dict) {
 	var output = document.getElementById("output");
 	var checkboxName;
 
-	output.innerHTML = output.innerHTML = "&lt;ul><br/>"
+	output.innerHTML = "&lt;ul><br/>"
 	for(var i = 0; i < checkboxes.length; i++){
 		if(checkboxes[i].checked){
 			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML);
@@ -75,6 +76,7 @@ function generateLinks(name, dict) {
 		}
 	}
 	output.innerHTML = output.innerHTML + "&lt;/ul>"
+	document.getElementById("copyButton").classList.add("display");
 }
 
 function makeLink(name, link, extra){
@@ -89,6 +91,7 @@ function selectAll(name){
 	var checkboxes = document.getElementsByName(name);
 	for(var i = 0; i < checkboxes.length; i++){
 		checkboxes[i].checked = true;
+		addHighlight(checkboxes[i]);
 	}
 }
 
@@ -96,6 +99,7 @@ function selectNone(name){
 	var checkboxes = document.getElementsByName(name);
 	for(var i = 0; i < checkboxes.length; i++){
 		checkboxes[i].checked = false;
+		removeHighlight(checkboxes[i]);
 	}
 }
 
@@ -106,7 +110,8 @@ function copyText(){
 }
 
 
-function displayCheckboxes(text, dict, name) {
+function displayCheckboxes(text, dict, name, thisButton) {
+	selectButton(thisButton);
 	var generateBtn = document.createElement("BUTTON");
 	var selectAllBtn = document.createElement("BUTTON");
 	var selectNoneBtn = document.createElement("BUTTON");
@@ -119,8 +124,54 @@ function displayCheckboxes(text, dict, name) {
 	selectAllBtn.innerHTML = "Select All";
 	selectNoneBtn.innerHTML = "Select None";
 
-	document.getElementById('checkboxes').innerHTML = text;
-	document.getElementById('checkboxes').prepend(selectNoneBtn);
-	document.getElementById('checkboxes').prepend(selectAllBtn);
-	document.getElementById('checkboxes').prepend(generateBtn);
+	var checkboxesElement = document.getElementById('checkboxes')
+	checkboxesElement.innerHTML = text;
+	checkboxesElement.prepend(selectNoneBtn);
+	checkboxesElement.prepend(selectAllBtn);
+	checkboxesElement.prepend(generateBtn);
+
+	document.getElementById("output").innerHTML = "";
+	document.getElementById("copyButton").classList.remove("display");
+}
+
+function highlight(element){
+	var parent = element.parentElement.classList;
+	if(parent.contains("active")){
+		parent.remove("active");
+	} else {
+		parent.add("active");
+	}
+}
+
+function addHighlight(element){
+	var parent = element.parentElement.classList;
+	parent.add("active");
+}
+
+function removeHighlight(element){
+	var parent = element.parentElement.classList;
+	parent.remove("active");
+}
+
+function selectButton(thisButton){
+	var buttons = document.getElementsByName("topButton");
+
+	for(var i = 0; i < buttons.length; i++){
+		try{
+			buttons[i].classList.remove("activeButton");
+		}catch{
+
+		}
+	}
+
+	thisButton.classList.add("activeButton");
+}
+
+function copyText(){
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("output"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand('copy');
 }

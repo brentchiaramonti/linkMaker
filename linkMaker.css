@@ -1,0 +1,37 @@
+#checkboxes {
+	columns:4;
+	margin-top: 10px;
+}
+
+label {
+    width: 100%;
+    margin: 2px 0;
+    padding: 7px 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+label:hover {
+    box-shadow: 0px 0px 1px 1px #000;
+}
+
+.active {
+  background: #aaa;
+}
+
+#buttons button {
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+.activeButton {
+	color: red;
+}
+
+#copyButton {
+	display: none;
+}
+
+.display {
+	display: block!important;
+}
