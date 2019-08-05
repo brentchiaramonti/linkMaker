@@ -1,5 +1,5 @@
 var links = [
-"dental.xml",
+"dental-general.xml",
 "derm.xml"
 ];
 
@@ -24,7 +24,7 @@ for (var i = 0; i < links.length; i++){
 
 
 function populateWebpage(xml){
-	var x, i, txt, xmlDoc, title, name, xmlFormated;
+	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, firstItem;
 
 	var dict = {};
 
@@ -33,7 +33,12 @@ function populateWebpage(xml){
 	var parser = new DOMParser();
     xmlDoc = parser.parseFromString(xml.responseText, "text/xml");
 	txt = "";
-	title = xmlDoc.getElementsByTagName("linkList")[0].getAttribute("title");
+	firstItem = xmlDoc.getElementsByTagName("linkList")[0]
+	title = firstItem.getAttribute("title");
+	officite = firstItem.getAttribute("officite");
+	dentrix = firstItem.getAttribute("dentrix");
+	baystone = firstItem.getAttribute("baystone");
+
 	name = title + "Links"
 	items = xmlDoc.getElementsByTagName("item");
 	for(i = 0; i < items.length; i++){
@@ -52,7 +57,7 @@ function populateWebpage(xml){
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = title;
 	btn.name = "topButton";
-	btn.onclick = function() {displayCheckboxes(txt, dict, name, this);};
+	btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone);};
 	document.getElementById("buttons").appendChild(btn);
 
 }
@@ -110,7 +115,7 @@ function copyText(){
 }
 
 
-function displayCheckboxes(text, dict, name, thisButton) {
+function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, baystone) {
 	selectButton(thisButton);
 	var generateBtn = document.createElement("BUTTON");
 	var selectAllBtn = document.createElement("BUTTON");
@@ -124,7 +129,30 @@ function displayCheckboxes(text, dict, name, thisButton) {
 	selectAllBtn.innerHTML = "Select All";
 	selectNoneBtn.innerHTML = "Select None";
 
-	var checkboxesElement = document.getElementById('checkboxes')
+	var checkboxesElement = document.getElementById('checkboxes');
+
+	if(officite){
+		var radioButton = document.createElement("INPUT");
+		radioButton.setAttribute("type", "radio");
+		radioButton.setAttribute("name", name + "-radio");
+		radioButton.setAttribute("value", officite);
+		checkboxesElement.prepend(radioButton);
+	}
+	if(dentrix){
+		var radioButton = document.createElement("INPUT");
+		radioButton.setAttribute("type", "radio");
+		radioButton.setAttribute("name", name + "-radio");
+		radioButton.setAttribute("value", dentrix);
+		checkboxesElement.prepend(radioButton);
+	}
+	if(baystone){
+		var radioButton = document.createElement("INPUT");
+		radioButton.setAttribute("type", "radio");
+		radioButton.setAttribute("name", name + "-radio");
+		radioButton.setAttribute("value", baystone);
+		checkboxesElement.prepend(radioButton);
+	}
+
 	checkboxesElement.innerHTML = text;
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
