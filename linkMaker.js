@@ -69,13 +69,21 @@ function populateWebpage(xml){
 function generateLinks(name, dict) {
 	var checkboxes = document.getElementsByName(name);
 	var output = document.getElementById("output");
+	var preface = "";
+	var radioButtons = document.getElementsByName(name + "-radio");
+	var i;
+	for(i = 0; i < radioButtons.length; i++){
+		if(radioButtons[i].checked){
+			preface = radioButtons[i].value;
+		}
+	}
 	var checkboxName;
 
 	output.innerHTML = "&lt;ul><br/>"
 	for(var i = 0; i < checkboxes.length; i++){
 		if(checkboxes[i].checked){
 			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML);
-			var url = dict[checkboxName]["url"];
+			var url = preface + dict[checkboxName]["url"];
 			var additional = dict[checkboxName]["additional"];
 			output.innerHTML = output.innerHTML + makeLink(checkboxName, url, additional);
 		}
@@ -130,30 +138,18 @@ function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, bays
 	selectNoneBtn.innerHTML = "Select None";
 
 	var checkboxesElement = document.getElementById('checkboxes');
+	checkboxesElement.innerHTML = text;
 
 	if(officite){
-		var radioButton = document.createElement("INPUT");
-		radioButton.setAttribute("type", "radio");
-		radioButton.setAttribute("name", name + "-radio");
-		radioButton.setAttribute("value", officite);
-		checkboxesElement.prepend(radioButton);
+		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "'> officite </label>" + checkboxesElement.innerHTML;
 	}
 	if(dentrix){
-		var radioButton = document.createElement("INPUT");
-		radioButton.setAttribute("type", "radio");
-		radioButton.setAttribute("name", name + "-radio");
-		radioButton.setAttribute("value", dentrix);
-		checkboxesElement.prepend(radioButton);
+		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "'> dentrix </label>" + checkboxesElement.innerHTML;
 	}
 	if(baystone){
-		var radioButton = document.createElement("INPUT");
-		radioButton.setAttribute("type", "radio");
-		radioButton.setAttribute("name", name + "-radio");
-		radioButton.setAttribute("value", baystone);
-		checkboxesElement.prepend(radioButton);
+		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "'> baystone </label>" + checkboxesElement.innerHTML;
 	}
 
-	checkboxesElement.innerHTML = text;
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
 	checkboxesElement.prepend(generateBtn);
