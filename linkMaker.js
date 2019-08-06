@@ -1,6 +1,7 @@
 var links = [
 "dental-general.xml",
-"derm.xml"
+"derm.xml",
+"dental-dear-doctor.xml"
 ];
 
 var requests = new Array(links.length);
@@ -140,19 +141,42 @@ function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, bays
 	var checkboxesElement = document.getElementById('checkboxes');
 	checkboxesElement.innerHTML = text;
 
+
+
+	var first = true;
+
+	
 	if(officite){
-		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "'> officite </label>" + checkboxesElement.innerHTML;
+		if(first){
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "' checked> officite </label>" + checkboxesElement.innerHTML;
+			first = false;
+		}else{
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "'> officite </label>" + checkboxesElement.innerHTML;	
+		}
 	}
 	if(dentrix){
-		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "'> dentrix </label>" + checkboxesElement.innerHTML;
+		if(first){
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "' checked> dentrix </label>" + checkboxesElement.innerHTML;
+			first = false;
+		}else{
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "'> dentrix </label>" + checkboxesElement.innerHTML;
+		}
 	}
 	if(baystone){
-		checkboxesElement.innerHTML = "<label><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "'> baystone </label>" + checkboxesElement.innerHTML;
+		if(first){
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "' checked> baystone </label>" + checkboxesElement.innerHTML;
+			first = false;
+		}else{
+			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "'> baystone </label>" + checkboxesElement.innerHTML;
+		}
 	}
+
+	checkboxesElement.innerHTML = "<br>" + checkboxesElement.innerHTML;
 
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
 	checkboxesElement.prepend(generateBtn);
+
 
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("copyButton").classList.remove("display");

@@ -35,3 +35,11 @@ label:hover {
 .display {
 	display: block!important;
 }
+
+label.portal {
+    width: 30%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    background-color: #aaaaaa99;
+    border-radius: 0px;
+}
