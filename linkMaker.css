@@ -16,7 +16,7 @@
 }
 
 label {
-    width: 100%;
+    width: calc(100% - 10px);;
     margin: 2px 0;
     padding: 7px 5px;
     display: inline-block;
