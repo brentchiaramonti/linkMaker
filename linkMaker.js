@@ -26,7 +26,7 @@ for (var i = 0; i < links.length; i++){
 
 
 function populateWebpage(xml){
-	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, firstItem;
+	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, target, firstItem;
 
 	var dict = {};
 
@@ -40,6 +40,7 @@ function populateWebpage(xml){
 	officite = firstItem.getAttribute("officite");
 	dentrix = firstItem.getAttribute("dentrix");
 	baystone = firstItem.getAttribute("baystone");
+	target = firstItem.getAttribute("target");
 
 	name = title + "Links"
 	items = xmlDoc.getElementsByTagName("item");
@@ -59,7 +60,7 @@ function populateWebpage(xml){
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = title;
 	btn.name = "topButton";
-	btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone);};
+	btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone, target);};
 	document.getElementById("buttons").appendChild(btn);
 
 }
@@ -68,7 +69,7 @@ function populateWebpage(xml){
 
 
 
-function generateLinks(name, dict) {
+function generateLinks(name, dict, target) {
 	var checkboxes = document.getElementsByName(name);
 	var output = document.getElementById("output");
 	var preface = "";
@@ -87,7 +88,13 @@ function generateLinks(name, dict) {
 			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML);
 			var url = preface + dict[checkboxName]["url"];
 			var additional = dict[checkboxName]["additional"];
-			output.innerHTML = output.innerHTML + makeLink(checkboxName, url, additional);
+
+			if(target){
+				output.innerHTML = output.innerHTML + makeTargetLink(checkboxName, url, additional, target);
+			} else {
+				output.innerHTML = output.innerHTML + makeLink(checkboxName, url, additional);
+			}
+			
 		}
 	}
 	output.innerHTML = output.innerHTML + "&lt;/ul>"
@@ -96,6 +103,9 @@ function generateLinks(name, dict) {
 
 function makeLink(name, link, extra){
   return "&lt;li>&lt;a href=\"" + link + "\">" + name + "&lt;/a>" + extra + "&lt;/li><br>"
+}
+function makeTargetLink(name, link, extra, target){
+	return "&lt;li>&lt;a target='" + target + "' href=\"" + link + "\">" + name + "&lt;/a>" + extra + "&lt;/li><br>"
 }
 function cleanText(string){
   var start_pos = string.indexOf('>') + 1;
@@ -125,13 +135,13 @@ function copyText(){
 }
 
 
-function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, baystone) {
+function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, baystone, target) {
 	selectButton(thisButton);
 	var generateBtn = document.createElement("BUTTON");
 	var selectAllBtn = document.createElement("BUTTON");
 	var selectNoneBtn = document.createElement("BUTTON");
 
-	generateBtn.onclick = function(){generateLinks(name, dict);};
+	generateBtn.onclick = function(){generateLinks(name, dict, target);};
 	selectAllBtn.onclick = function(){selectAll(name);};
 	selectNoneBtn.onclick = function(){selectNone(name);};
 
