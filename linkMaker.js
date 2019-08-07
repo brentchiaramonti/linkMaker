@@ -41,7 +41,7 @@ function populateWebpage(xml){
 	dentrix = firstItem.getAttribute("dentrix");
 	baystone = firstItem.getAttribute("baystone");
 	target = firstItem.getAttribute("newTab")
-	console.log(title);
+	console.log(target);
 
 	name = title + "Links"
 	items = xmlDoc.getElementsByTagName("item");
