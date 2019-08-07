@@ -42,7 +42,6 @@ function populateWebpage(xml){
 	dentrix = firstItem.getAttribute("dentrix");
 	baystone = firstItem.getAttribute("baystone");
 	target = firstItem.getAttribute("newTab")
-	console.log(target);
 
 	name = title + "Links"
 	items = xmlDoc.getElementsByTagName("item");
@@ -90,7 +89,6 @@ function generateLinks(name, dict, target) {
 			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML);
 			var url = preface + dict[checkboxName]["url"];
 			var additional = dict[checkboxName]["additional"];
-			console.log(target);
 			if(target){
 				output.innerHTML = output.innerHTML + makeTargetLink(checkboxName, url, additional, target);
 			} else {
