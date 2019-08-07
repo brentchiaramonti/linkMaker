@@ -1,7 +1,8 @@
 var links = [
 "dental-general.xml",
 "derm.xml",
-"dental-dear-doctor.xml"
+"dental-dear-doctor.xml",
+"pediatric-aap.xml"
 ];
 
 var requests = new Array(links.length);
