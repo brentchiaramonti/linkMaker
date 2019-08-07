@@ -1,153 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <linkList title="Dental-dear-doctor" officite="articles/dear_doctor/" dentrix="articles_dear_doctor/dear_doctor/">
   <item>
-    <text>Periodontal gum disease</text>
-    <url>09323-periodontal-gum-disease</url>
-    <additional />
-  </item>
-  <item>
-    <text>Smile makeover</text>
-    <url>09344-smile-makeover</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral hygiene for kids</text>
-    <url>509311-oral-hygiene-for-kids</url>
-    <additional />
-  </item>
-  <item>
-    <text>Invisalign for teens</text>
-    <url>509294-invisalign-for-teens</url>
-    <additional />
-  </item>
-  <item>
-    <text>Fillings</text>
-    <url>509277-fillings</url>
-    <additional />
-  </item>
-  <item>
-    <text>Orthodontic faqs</text>
-    <url>509317-orthodontic-faqs</url>
-    <additional />
-  </item>
-  <item>
-    <text>Sinus surgery</text>
-    <url>509342-sinus-surgery</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tips to prevent cavities</text>
-    <url>509354-tips-to-prevent-cavities</url>
-    <additional />
-  </item>
-  <item>
-    <text>Preventive dentistry</text>
-    <url>509330-preventive-dentistry</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral cancer</text>
-    <url>509306-oral-cancer</url>
-    <additional />
-  </item>
-  <item>
-    <text>Bad breath</text>
-    <url>509250-bad-breath</url>
-    <additional />
-  </item>
-  <item>
-    <text>Aging dental health</text>
-    <url>509246-aging-dental-health</url>
-    <additional />
-  </item>
-  <item>
-    <text>Traumatic dental injuries</text>
-    <url>509364-traumatic-dental-injuries</url>
-    <additional />
-  </item>
-  <item>
-    <text>Crowns bridgework</text>
-    <url>509264-crowns-bridgework</url>
-    <additional />
-  </item>
-  <item>
-    <text>Sealants</text>
-    <url>509340-sealants</url>
-    <additional />
-  </item>
-  <item>
-    <text>Invisalign for adults</text>
-    <url>509293-invisalign-for-adults</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral cancer screening</text>
-    <url>509307-oral-cancer-screening</url>
-    <additional />
-  </item>
-  <item>
-    <text>Inlays and onlays</text>
-    <url>509290-inlays-onlays</url>
-    <additional />
-  </item>
-  <item>
-    <text>Age one dental visit</text>
-    <url>509245-age-one-dental-visit</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tooth colored fillings</text>
-    <url>509361-tooth-colored-fillings</url>
-    <additional />
-  </item>
-  <item>
-    <text>Cosmetic tooth bonding</text>
-    <url>509262-cosmetic-tooth-bonding</url>
-    <additional />
-  </item>
-  <item>
-    <text>Teething</text>
-    <url>509350-teething</url>
-    <additional />
-  </item>
-  <item>
-    <text>teeth-whitening</text>
-    <url>509349-teeth-whitening</url>
-    <additional />
-  </item>
-  <item>
-    <text>Same day crowns</text>
-    <url>509339-same-day-crowns-cad-cam</url>
-    <additional />
-  </item>
-  <item>
-    <text>Removable dentures</text>
-    <url>509333-removable-dentures</url>
-    <additional />
-  </item>
-  <item>
-    <text>Post orthodontic care</text>
-    <url>509327-post-orthodontic-care</url>
-    <additional />
-  </item>
-  <item>
-    <text>Porcelain veneers</text>
-    <url>509326-porcelain-veneers</url>
-    <additional />
-  </item>
-  <item>
-    <text>How to floss</text>
-    <url>509288-how-to-floss</url>
-    <additional />
-  </item>
-  <item>
-    <text>How to brush</text>
-    <url>509287-how-to-brush</url>
-    <additional />
-  </item>
-  <item>
-    <text>Brushing flossing with braces</text>
-    <url>509255-brushing-flossing-with-braces</url>
+    <text>Adolescent orthodontic care</text>
+    <url>509243-adolescent-orthodontic-care</url>
     <additional />
   </item>
   <item>
@@ -156,258 +11,38 @@
     <additional />
   </item>
   <item>
-    <text>Ultrasonic cleanings</text>
-    <url>509366-ultrasonic-cleanings</url>
+    <text>Age one dental visit</text>
+    <url>509245-age-one-dental-visit</url>
     <additional />
   </item>
   <item>
-    <text>Root canal treatment</text>
-    <url>509336-root-canal-treatment</url>
+    <text>Aging dental health</text>
+    <url>509246-aging-dental-health</url>
     <additional />
   </item>
   <item>
-    <text>Your first orthodontic appointment</text>
-    <url>509369-your-first-orthodontic-appointment</url>
+    <text>Air abrasion</text>
+    <url>509247-air-abrasion</url>
     <additional />
   </item>
   <item>
-    <text>Tmd</text>
-    <url>509355-tmd</url>
+    <text>Anesthesia wand</text>
+    <url>509248-anesthesia-wand</url>
     <additional />
   </item>
   <item>
-    <text>Top reasons to choose dental implants</text>
-    <url>509363-top-reasons-to-choose-dental-implants</url>
+    <text>Antibiotic premedication for dental treatments</text>
+    <url>509249-antibiotic-premedicationfor-dental-treatments</url>
     <additional />
   </item>
   <item>
-    <text>Toothpaste</text>
-    <url>509362-toothpaste</url>
+    <text>Bad breath</text>
+    <url>509250-bad-breath</url>
     <additional />
   </item>
   <item>
-    <text>Tooth contouring reshaping</text>
-    <url>509356-tooth-contouring-reshaping</url>
-    <additional />
-  </item>
-  <item>
-    <text>Types of braces</text>
-    <url>509365-types-of-braces</url>
-    <additional />
-  </item>
-  <item>
-    <text>Laser dentistry</text>
-    <url>509296-laser-dentistry</url>
-    <additional />
-  </item>
-  <item>
-    <text>Snoring sleep apnea</text>
-    <url>509345-snoring-sleep-apnea</url>
-    <additional />
-  </item>
-  <item>
-    <text>Orthodontic emergencies</text>
-    <url>509315-orthodontic-emergencies</url>
-    <additional />
-  </item>
-  <item>
-    <text>Space maintainers</text>
-    <url>509346-space-maintainers</url>
-    <additional />
-  </item>
-  <item>
-    <text>Hidden consequences of losing teeth</text>
-    <url>509286-hidden-consequences-of-losing-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Laser decay diagnosis</text>
-    <url>509295-laser-decay-diagnosis</url>
-    <additional />
-  </item>
-  <item>
-    <text>Wisdom teeth</text>
-    <url>509368-wisdom-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Facial taruma and reconstructive surgery</text>
-    <url>509276-facial-trauma-and-reconstructive-surgery</url>
-    <additional />
-  </item>
-  <item>
-    <text>Periodontal flap surgery</text>
-    <url>509324-periodontal-flap-surgery</url>
-    <additional />
-  </item>
-  <item>
-    <text>Root canal retreatment</text>
-    <url>509334-root-canal-retreatment</url>
-    <additional />
-  </item>
-  <item>
-    <text>Root canal surgery apicoectomy</text>
-    <url>509335-root-canal-surgery-apicoectomy</url>
-    <additional />
-  </item>
-  <item>
-    <text>Sleep apnea behavior problems in children</text>
-    <url>509343-sleep-apnea-behavior-problems-in-children</url>
-    <additional />
-  </item>
-  <item>
-    <text>Whitening traumatized teeth</text>
-    <url>509367-whitening-traumatized-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tooth wear</text>
-    <url>509360-tooth-wear</url>
-    <additional />
-  </item>
-  <item>
-    <text>Nutrition oral health</text>
-    <url>509305-nutrition-oral-health</url>
-    <additional />
-  </item>
-  <item>
-    <text>Thumb sucking</text>
-    <url>509353-thumb-sucking</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral systemic connection</text>
-    <url>509314-oral-systemic-connection</url>
-    <additional />
-  </item>
-  <item>
-    <text>Headaches migraines</text>
-    <url>509285-headaches-migraines</url>
-    <additional />
-  </item>
-  <item>
-    <text>Nitrous oxide for children</text>
-    <url>509303-nitrous-oxide-for-children</url>
-    <additional />
-  </item>
-  <item>
-    <text>Temporary anchorage devices tads</text>
-    <url>509351-temporary-anchorage-devices-tads</url>
-    <additional />
-  </item>
-  <item>
-    <text>Thumb finger appliances</text>
-    <url>509352-thumb-finger-appliances</url>
-    <additional />
-  </item>
-  <item>
-    <text>Extractions</text>
-    <url>509275-extractions</url>
-    <additional />
-  </item>
-  <item>
-    <text>Sedation dentistry</text>
-    <url>509341-sedation-dentistry</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tooth sensitivity</text>
-    <url>509359-tooth-sensitivity</url>
-    <additional />
-  </item>
-  <item>
-    <text>Cleft lip palate repair</text>
-    <url>509256-cleft-lip-palate-repair</url>
-    <additional />
-  </item>
-  <item>
-    <text>Non surgical periodontal treatment</text>
-    <url>509304-non-surgical-periodontal-treatment</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral piercings</text>
-    <url>509312-oral-piercings</url>
-    <additional />
-  </item>
-  <item>
-    <text>Dental implants faqs</text>
-    <url>509265-dental-implants-faqs</url>
-    <additional />
-  </item>
-  <item>
-    <text>Professional teeth cleanings</text>
-    <url>509331-professional-teeth-cleanings</url>
-    <additional />
-  </item>
-  <item>
-    <text>Gummy smiles</text>
-    <url>509284-gummy-smiles</url>
-    <additional />
-  </item>
-  <item>
-    <text>Professional teeth cleanings</text>
-    <url>509332-professional-teeth-cleanings</url>
-    <additional />
-  </item>
-  <item>
-    <text>Gum injuries</text>
-    <url>509283-gum-injuries</url>
-    <additional />
-  </item>
-  <item>
-    <text>Nitrous oxide</text>
-    <url>509302-nitrous-oxide</url>
-    <additional />
-  </item>
-  <item>
-    <text>Gum grafting</text>
-    <url>509282-gum-grafting</url>
-    <additional />
-  </item>
-  <item>
-    <text>Intra oral camera</text>
-    <url>509292-intra-oral-camera</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tooth pain</text>
-    <url>509358-tooth-pain</url>
-    <additional />
-  </item>
-  <item>
-    <text>Orthodontics dental hygiene</text>
-    <url>509320-orthodontics-dental-hygiene</url>
-    <additional />
-  </item>
-  <item>
-    <text>Interdental</text>
-    <url>509291-interdental-cleaning-devices</url>
-    <additional />
-  </item>
-  <item>
-    <text>Bone grafting</text>
-    <url>509253-bone-grafting</url>
-    <additional />
-  </item>
-  <item>
-    <text>Mouthrinses</text>
-    <url>509301-mouthrinses</url>
-    <additional />
-  </item>
-  <item>
-    <text>Tooth decay prevention</text>
-    <url>509357-tooth-decay-prevention</url>
-    <additional />
-  </item>
-  <item>
-    <text>Cracked teeth</text>
-    <url>509263-cracked-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Osteoporosis oral health</text>
-    <url>509321-osteoporosis-oral-health</url>
+    <text>Blood pressure medications and your gums</text>
+    <url>509251-blood-pressure-medications-your-gums</url>
     <additional />
   </item>
   <item>
@@ -416,18 +51,73 @@
     <additional />
   </item>
   <item>
-    <text>Mouthguards for children</text>
-    <url>509300-mouthguards-for-children</url>
+    <text>Bone grafting</text>
+    <url>509253-bone-grafting</url>
     <additional />
   </item>
   <item>
-    <text>Root canal treatment for children</text>
-    <url>509338-root-canal-treatment-for-children</url>
+    <text>Brushing flossing with braces</text>
+    <url>509255-brushing-flossing-with-braces</url>
+    <additional />
+  </item>
+  <item>
+    <text>Cleft lip palate repair</text>
+    <url>509256-cleft-lip-palate-repair</url>
+    <additional />
+  </item>
+  <item>
+    <text>Combined root canal and gum problems</text>
+    <url>509257-combined-root-canal-gum-problems</url>
+    <additional />
+  </item>
+  <item>
+    <text>Cone beam ct imaging</text>
+    <url>509258-cone-beam-ct-imaging</url>
+    <additional />
+  </item>
+  <item>
+    <text>Corrective jaw orthognathic surgery</text>
+    <url>509259-corrective-jaw-orthognathic-surgery</url>
     <additional />
   </item>
   <item>
     <text>Cosmetic gum surgery</text>
     <url>509261-cosmetic-gum-surgery</url>
+    <additional />
+  </item>
+  <item>
+    <text>Cosmetic tooth bonding</text>
+    <url>509262-cosmetic-tooth-bonding</url>
+    <additional />
+  </item>
+  <item>
+    <text>Cracked teeth</text>
+    <url>509263-cracked-teeth</url>
+    <additional />
+  </item>
+  <item>
+    <text>Crowns bridgework</text>
+    <url>509264-crowns-bridgework</url>
+    <additional />
+  </item>
+  <item>
+    <text>Dental implants faqs</text>
+    <url>509265-dental-implants-faqs</url>
+    <additional />
+  </item>
+  <item>
+    <text>Digital dental impressions</text>
+    <url>509267-digital-dental-impressions</url>
+    <additional />
+  </item>
+  <item>
+    <text>Digital x-rays</text>
+    <url>509268-digital-x-rays</url>
+    <additional />
+  </item>
+  <item>
+    <text>Dry mouth</text>
+    <url>509269-dry-mouth</url>
     <additional />
   </item>
   <item>
@@ -441,93 +131,18 @@
     <additional />
   </item>
   <item>
-    <text>Geographic tongue</text>
-    <url>509281-geographic-tongue</url>
+    <text>Extractions</text>
+    <url>509275-extractions</url>
     <additional />
   </item>
   <item>
-    <text>Pregnancy hormones oral health</text>
-    <url>509329-pregnancy-hormones-oral-health</url>
+    <text>Facial taruma and reconstructive surgery</text>
+    <url>509276-facial-trauma-and-reconstructive-surgery</url>
     <additional />
   </item>
   <item>
-    <text>Stress oral habits</text>
-    <url>509347-stress-oral-habits</url>
-    <additional />
-  </item>
-  <item>
-    <text>Blood pressure medications and your gums</text>
-    <url>509251-blood-pressure-medications-your-gums</url>
-    <additional />
-  </item>
-  <item>
-    <text>Dry mouth</text>
-    <url>509269-dry-mouth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Air abrasion</text>
-    <url>509247-air-abrasion</url>
-    <additional />
-  </item>
-  <item>
-    <text>Fluoride</text>
-    <url>509279-fluoride</url>
-    <additional />
-  </item>
-  <item>
-    <text>Fluoride and your child</text>
-    <url>509280-fluoride-your-child</url>
-    <additional />
-  </item>
-  <item>
-    <text>Pregnancy and your child's developing teeth</text>
-    <url>509328-pregnancy-your-child-s-developing-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Root canal treatment faqs</text>
-    <url>509337-root-canal-treatment-faqs</url>
-    <additional />
-  </item>
-  <item>
-    <text>Mouthguards for adults</text>
-    <url>509299-mouthguards-for-adults</url>
-    <additional />
-  </item>
-  <item>
-    <text>Digital x-rays</text>
-    <url>509268-digital-x-rays</url>
-    <additional />
-  </item>
-  <item>
-    <text>Oral diagnosis and biopsies</text>
-    <url>509308-oral-diagnosis-and-biopsies</url>
-    <additional />
-  </item>
-  <item>
-    <text>Orthodontic headgear</text>
-    <url>509318-orthodontic-headgear</url>
-    <additional />
-  </item>
-  <item>
-    <text>Cone beam ct imaging</text>
-    <url>509258-cone-beam-ct-imaging</url>
-    <additional />
-  </item>
-  <item>
-    <text>Missing teeth</text>
-    <url>509298-missing-teeth</url>
-    <additional />
-  </item>
-  <item>
-    <text>Corrective jaw orthognathic surgery</text>
-    <url>509259-corrective-jaw-orthognathic-surgery</url>
-    <additional />
-  </item>
-  <item>
-    <text>Digital dental impressions</text>
-    <url>509267-digital-dental-impressions</url>
+    <text>Fillings</text>
+    <url>509277-fillings</url>
     <additional />
   </item>
   <item>
@@ -536,8 +151,88 @@
     <additional />
   </item>
   <item>
-    <text>Antibiotic premedication for dental treatments</text>
-    <url>509249-antibiotic-premedicationfor-dental-treatments</url>
+    <text>Fluoride and your child</text>
+    <url>509280-fluoride-your-child</url>
+    <additional />
+  </item>
+  <item>
+    <text>Fluoride</text>
+    <url>509279-fluoride</url>
+    <additional />
+  </item>
+  <item>
+    <text>Geographic tongue</text>
+    <url>509281-geographic-tongue</url>
+    <additional />
+  </item>
+  <item>
+    <text>Gum grafting</text>
+    <url>509282-gum-grafting</url>
+    <additional />
+  </item>
+  <item>
+    <text>Gum injuries</text>
+    <url>509283-gum-injuries</url>
+    <additional />
+  </item>
+  <item>
+    <text>Gummy smiles</text>
+    <url>509284-gummy-smiles</url>
+    <additional />
+  </item>
+  <item>
+    <text>Headaches migraines</text>
+    <url>509285-headaches-migraines</url>
+    <additional />
+  </item>
+  <item>
+    <text>Hidden consequences of losing teeth</text>
+    <url>509286-hidden-consequences-of-losing-teeth</url>
+    <additional />
+  </item>
+  <item>
+    <text>How to brush</text>
+    <url>509287-how-to-brush</url>
+    <additional />
+  </item>
+  <item>
+    <text>How to floss</text>
+    <url>509288-how-to-floss</url>
+    <additional />
+  </item>
+  <item>
+    <text>Inlays and onlays</text>
+    <url>509290-inlays-onlays</url>
+    <additional />
+  </item>
+  <item>
+    <text>Interdental</text>
+    <url>509291-interdental-cleaning-devices</url>
+    <additional />
+  </item>
+  <item>
+    <text>Intra oral camera</text>
+    <url>509292-intra-oral-camera</url>
+    <additional />
+  </item>
+  <item>
+    <text>Invisalign for adults</text>
+    <url>509293-invisalign-for-adults</url>
+    <additional />
+  </item>
+  <item>
+    <text>Invisalign for teens</text>
+    <url>509294-invisalign-for-teens</url>
+    <additional />
+  </item>
+  <item>
+    <text>Laser decay diagnosis</text>
+    <url>509295-laser-decay-diagnosis</url>
+    <additional />
+  </item>
+  <item>
+    <text>Laser dentistry</text>
+    <url>509296-laser-dentistry</url>
     <additional />
   </item>
   <item>
@@ -546,18 +241,323 @@
     <additional />
   </item>
   <item>
-    <text>Adolescent orthodontic care</text>
-    <url>509243-adolescent-orthodontic-care</url>
+    <text>Missing teeth</text>
+    <url>509298-missing-teeth</url>
     <additional />
   </item>
   <item>
-    <text>Anesthesia wand</text>
-    <url>509248-anesthesia-wand</url>
+    <text>Mouthguards for adults</text>
+    <url>509299-mouthguards-for-adults</url>
     <additional />
   </item>
   <item>
-    <text>Combined root canal and gum problems</text>
-    <url>509257-combined-root-canal-gum-problems</url>
+    <text>Mouthguards for children</text>
+    <url>509300-mouthguards-for-children</url>
+    <additional />
+  </item>
+  <item>
+    <text>Mouthrinses</text>
+    <url>509301-mouthrinses</url>
+    <additional />
+  </item>
+  <item>
+    <text>Nitrous oxide for children</text>
+    <url>509303-nitrous-oxide-for-children</url>
+    <additional />
+  </item>
+  <item>
+    <text>Nitrous oxide</text>
+    <url>509302-nitrous-oxide</url>
+    <additional />
+  </item>
+  <item>
+    <text>Non surgical periodontal treatment</text>
+    <url>509304-non-surgical-periodontal-treatment</url>
+    <additional />
+  </item>
+  <item>
+    <text>Nutrition oral health</text>
+    <url>509305-nutrition-oral-health</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral cancer screening</text>
+    <url>509307-oral-cancer-screening</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral cancer</text>
+    <url>509306-oral-cancer</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral diagnosis and biopsies</text>
+    <url>509308-oral-diagnosis-and-biopsies</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral hygiene for kids</text>
+    <url>509311-oral-hygiene-for-kids</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral piercings</text>
+    <url>509312-oral-piercings</url>
+    <additional />
+  </item>
+  <item>
+    <text>Oral systemic connection</text>
+    <url>509314-oral-systemic-connection</url>
+    <additional />
+  </item>
+  <item>
+    <text>Orthodontic emergencies</text>
+    <url>509315-orthodontic-emergencies</url>
+    <additional />
+  </item>
+  <item>
+    <text>Orthodontic faqs</text>
+    <url>509317-orthodontic-faqs</url>
+    <additional />
+  </item>
+  <item>
+    <text>Orthodontic headgear</text>
+    <url>509318-orthodontic-headgear</url>
+    <additional />
+  </item>
+  <item>
+    <text>Orthodontics dental hygiene</text>
+    <url>509320-orthodontics-dental-hygiene</url>
+    <additional />
+  </item>
+  <item>
+    <text>Osteoporosis oral health</text>
+    <url>509321-osteoporosis-oral-health</url>
+    <additional />
+  </item>
+  <item>
+    <text>Periodontal flap surgery</text>
+    <url>509324-periodontal-flap-surgery</url>
+    <additional />
+  </item>
+  <item>
+    <text>Periodontal gum disease</text>
+    <url>09323-periodontal-gum-disease</url>
+    <additional />
+  </item>
+  <item>
+    <text>Porcelain veneers</text>
+    <url>509326-porcelain-veneers</url>
+    <additional />
+  </item>
+  <item>
+    <text>Post orthodontic care</text>
+    <url>509327-post-orthodontic-care</url>
+    <additional />
+  </item>
+  <item>
+    <text>Pregnancy and your child's developing teeth</text>
+    <url>509328-pregnancy-your-child-s-developing-teeth</url>
+    <additional />
+  </item>
+  <item>
+    <text>Pregnancy hormones oral health</text>
+    <url>509329-pregnancy-hormones-oral-health</url>
+    <additional />
+  </item>
+  <item>
+    <text>Preventive dentistry</text>
+    <url>509330-preventive-dentistry</url>
+    <additional />
+  </item>
+  <item>
+    <text>Professional teeth cleanings</text>
+    <url>509331-professional-teeth-cleanings</url>
+    <additional />
+  </item>
+  <item>
+    <text>Professional teeth cleanings</text>
+    <url>509332-professional-teeth-cleanings</url>
+    <additional />
+  </item>
+  <item>
+    <text>Removable dentures</text>
+    <url>509333-removable-dentures</url>
+    <additional />
+  </item>
+  <item>
+    <text>Root canal retreatment</text>
+    <url>509334-root-canal-retreatment</url>
+    <additional />
+  </item>
+  <item>
+    <text>Root canal surgery apicoectomy</text>
+    <url>509335-root-canal-surgery-apicoectomy</url>
+    <additional />
+  </item>
+  <item>
+    <text>Root canal treatment faqs</text>
+    <url>509337-root-canal-treatment-faqs</url>
+    <additional />
+  </item>
+  <item>
+    <text>Root canal treatment for children</text>
+    <url>509338-root-canal-treatment-for-children</url>
+    <additional />
+  </item>
+  <item>
+    <text>Root canal treatment</text>
+    <url>509336-root-canal-treatment</url>
+    <additional />
+  </item>
+  <item>
+    <text>Same day crowns</text>
+    <url>509339-same-day-crowns-cad-cam</url>
+    <additional />
+  </item>
+  <item>
+    <text>Sealants</text>
+    <url>509340-sealants</url>
+    <additional />
+  </item>
+  <item>
+    <text>Sedation dentistry</text>
+    <url>509341-sedation-dentistry</url>
+    <additional />
+  </item>
+  <item>
+    <text>Sinus surgery</text>
+    <url>509342-sinus-surgery</url>
+    <additional />
+  </item>
+  <item>
+    <text>Sleep apnea behavior problems in children</text>
+    <url>509343-sleep-apnea-behavior-problems-in-children</url>
+    <additional />
+  </item>
+  <item>
+    <text>Smile makeover</text>
+    <url>09344-smile-makeover</url>
+    <additional />
+  </item>
+  <item>
+    <text>Snoring sleep apnea</text>
+    <url>509345-snoring-sleep-apnea</url>
+    <additional />
+  </item>
+  <item>
+    <text>Space maintainers</text>
+    <url>509346-space-maintainers</url>
+    <additional />
+  </item>
+  <item>
+    <text>Stress oral habits</text>
+    <url>509347-stress-oral-habits</url>
+    <additional />
+  </item>
+  <item>
+    <text>Teething</text>
+    <url>509350-teething</url>
+    <additional />
+  </item>
+  <item>
+    <text>Temporary anchorage devices tads</text>
+    <url>509351-temporary-anchorage-devices-tads</url>
+    <additional />
+  </item>
+  <item>
+    <text>Thumb finger appliances</text>
+    <url>509352-thumb-finger-appliances</url>
+    <additional />
+  </item>
+  <item>
+    <text>Thumb sucking</text>
+    <url>509353-thumb-sucking</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tips to prevent cavities</text>
+    <url>509354-tips-to-prevent-cavities</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tmd</text>
+    <url>509355-tmd</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth colored fillings</text>
+    <url>509361-tooth-colored-fillings</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth contouring reshaping</text>
+    <url>509356-tooth-contouring-reshaping</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth decay prevention</text>
+    <url>509357-tooth-decay-prevention</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth pain</text>
+    <url>509358-tooth-pain</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth sensitivity</text>
+    <url>509359-tooth-sensitivity</url>
+    <additional />
+  </item>
+  <item>
+    <text>Tooth wear</text>
+    <url>509360-tooth-wear</url>
+    <additional />
+  </item>
+  <item>
+    <text>Toothpaste</text>
+    <url>509362-toothpaste</url>
+    <additional />
+  </item>
+  <item>
+    <text>Top reasons to choose dental implants</text>
+    <url>509363-top-reasons-to-choose-dental-implants</url>
+    <additional />
+  </item>
+  <item>
+    <text>Traumatic dental injuries</text>
+    <url>509364-traumatic-dental-injuries</url>
+    <additional />
+  </item>
+  <item>
+    <text>Types of braces</text>
+    <url>509365-types-of-braces</url>
+    <additional />
+  </item>
+  <item>
+    <text>Ultrasonic cleanings</text>
+    <url>509366-ultrasonic-cleanings</url>
+    <additional />
+  </item>
+  <item>
+    <text>Whitening traumatized teeth</text>
+    <url>509367-whitening-traumatized-teeth</url>
+    <additional />
+  </item>
+  <item>
+    <text>Wisdom teeth</text>
+    <url>509368-wisdom-teeth</url>
+    <additional />
+  </item>
+  <item>
+    <text>Your first orthodontic appointment</text>
+    <url>509369-your-first-orthodontic-appointment</url>
+    <additional />
+  </item>
+  <item>
+    <text>teeth-whitening</text>
+    <url>509349-teeth-whitening</url>
     <additional />
   </item>
 </linkList>
