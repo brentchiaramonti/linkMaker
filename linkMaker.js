@@ -1,7 +1,7 @@
 var links = [
 "dental-general.xml",
-"derm.xml",
 "dental-dear-doctor.xml",
+"derm-aad.xml",
 "pediatric-aap.xml",
 "podiatry-acfas.xml"
 ];
