@@ -7,7 +7,8 @@ var links = [
 "pediatric-general.xml",
 "pediatric-aap.xml",
 "podiatry-general.xml",
-"podiatry-acfas.xml"
+"podiatry-acfas.xml",
+"gastro-asge.xml"
 ];
 
 var requests = new Array(links.length);
