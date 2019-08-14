@@ -16,6 +16,7 @@ var requests = new Array(links.length);
 
 
 for (var i = 0; i < links.length; i++){
+
 	requests[i] = new XMLHttpRequest();
 
 	requests[i].onreadystatechange = function() {
@@ -34,6 +35,8 @@ for (var i = 0; i < links.length; i++){
 function populateWebpage(xml){
 	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, target, firstItem;
 
+	var titleXML, order;
+
 	var dict = {};
 
 	var text, url, additional
@@ -43,6 +46,8 @@ function populateWebpage(xml){
 	txt = "";
 	firstItem = xmlDoc.getElementsByTagName("linkList")[0]
 	title = firstItem.getAttribute("title");
+	titleXML = title + ".xml";
+	order = links.indexOf(titleXML.toLowerCase());
 	officite = firstItem.getAttribute("officite");
 	dentrix = firstItem.getAttribute("dentrix");
 	baystone = firstItem.getAttribute("baystone");
@@ -66,6 +71,7 @@ function populateWebpage(xml){
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = title;
 	btn.name = "topButton";
+	btn.style.order = order;
 	btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone, target);};
 	document.getElementById("buttons").appendChild(btn);
 

@@ -31,6 +31,12 @@ label:hover {
   background: #aaa;
 }
 
+div#buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 #buttons button {
     padding: 5px 20px;
     font-size: 18px;
