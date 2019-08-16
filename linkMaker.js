@@ -8,31 +8,42 @@ var links = [
 "pediatric-aap.xml",
 "podiatry-general.xml",
 "podiatry-acfas.xml",
+"podiatry-aad.xml",
 "gastro-asge.xml"
+];
+
+var oldLinks = [
 ];
 
 var requests = new Array(links.length);
 
-
-
 for (var i = 0; i < links.length; i++){
-
 	requests[i] = new XMLHttpRequest();
-
 	requests[i].onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-	        populateWebpage(this);
+	        populateWebpage(this, "new");
 	    }
 	};
-
 	requests[i].open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + links[i], true);
 	requests[i].send();
+}
 
+var oldRequests = new Array(oldLinks.length);
+
+for (var i = 0; i < oldLinks.length; i++){
+	oldRequests[i] = new XMLHttpRequest();
+	oldRequests[i].onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        populateWebpage(this, "old");
+	    }
+	};
+	oldRequests[i].open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + oldLinks[i], true);
+	oldRequests[i].send();
 }
 
 
 
-function populateWebpage(xml){
+function populateWebpage(xml, type){
 	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, target, firstItem;
 
 	var titleXML, order;
