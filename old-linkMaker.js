@@ -1,127 +1,98 @@
-	function makeApiCall() {
-      var params = {
-        // The spreadsheet to request.
-        spreadsheetId: '10pUk3trlJApXoVZuwnkJKAQS3f36UU0Y43SBTRB1IUI',
+var links = [
+"dental-general.xml",
+"dental-dear-doctor.xml",
+"dental-baystone.xml",
+"derm-general.xml",
+"derm-aad.xml",
+"pediatric-general.xml",
+"pediatric-aap.xml",
+"podiatry-general.xml",
+"podiatry-acfas.xml",
+"podiatry-aad.xml",
+"gastro-asge.xml"
+];
+
+var oldLinks = [
+];
+
+var requests = new Array(links.length);
+
+for (var i = 0; i < links.length; i++){
+	requests[i] = new XMLHttpRequest();
+	requests[i].onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        populateWebpage(this, "new");
+	    }
+	};
+	requests[i].open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + links[i], true);
+	requests[i].send();
+}
+
+var oldRequests = new Array(oldLinks.length);
+
+for (var i = 0; i < oldLinks.length; i++){
+	oldRequests[i] = new XMLHttpRequest();
+	oldRequests[i].onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        populateWebpage(this, "old");
+	    }
+	};
+	oldRequests[i].open("GET", "https://raw.githubusercontent.com/brentchiaramonti/linkMaker/master/xml_files/" + oldLinks[i], true);
+	oldRequests[i].send();
+}
 
 
 
-        // True if grid data should be returned.
-        // This parameter is ignored if a field mask was set in the request.
-        includeGridData: true,
-      };
+function populateWebpage(xml, type){
+	var x, i, txt, xmlDoc, title, name, xmlFormated, officite, dentrix, baystone, target, firstItem;
 
-      var request = gapi.client.sheets.spreadsheets.get(params);
-      request.then(function(response) {
-        // TODO: Change code below to process the `response` object:
-        processTheResponse(response.result);
-      }, function(reason) {
-        console.error('error: ' + reason.result.error.message);
-      });
-    }
+	var titleXML, order;
 
-    function processTheResponse(input){
-    	var sheets = input.sheets;
-    	for(var i = 0; i < sheets.length; i++){
-    		processTheSheet(sheets[i]);
-    	}
-    }
+	var dict = {};
 
-    function processTheSheet(sheet){
-    	var rows = sheet.data[0].rowData;
-    	var firstRow = rows[0];
-    	var title = firstRow.values[0].formattedValue;
-    	var dict = {};
-    	var name = title + "Links"
-    	var txt = '';
-    	var target, officite, dentrix, baystone;
+	var text, url, additional
 
-    	for(var k = 1; k < firstRow.values.length; k++){
+	var parser = new DOMParser();
+    xmlDoc = parser.parseFromString(xml.responseText, "text/xml");
+	txt = "";
+	firstItem = xmlDoc.getElementsByTagName("linkList")[0]
+	title = firstItem.getAttribute("title");
+	titleXML = title + ".xml";
+	order = links.indexOf(titleXML.toLowerCase());
+	officite = firstItem.getAttribute("officite");
+	dentrix = firstItem.getAttribute("dentrix");
+	baystone = firstItem.getAttribute("baystone");
+	target = firstItem.getAttribute("newTab")
 
-    		if(firstRow.values[k].formattedValue.includes('target')){
-    			target = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Officite')){
-    			officite = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Dentrix')){
-    			dentrix = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Baystone')){
-    			baystone = splitString(firstRow.values[k].formattedValue);
-    		}
-    	}
-
-    	for(var j = 2; j < rows.length; j++){
-    		txt += processTheRow(rows[j], dict, name, txt);
-    	}
-		var btn = document.createElement("BUTTON");
-		btn.innerHTML = title;
-		btn.name = "topButton";
-		btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone, target);};
-		document.getElementById("buttons").appendChild(btn);
-
+	name = title + "Links"
+	items = xmlDoc.getElementsByTagName("item");
+	for(i = 0; i < items.length; i++){
+		text = items[i].childNodes[1].firstChild.nodeValue;
+		url = items[i].childNodes[3].firstChild.nodeValue;
+		try{
+			additional = items[i].childNodes[5].firstChild.nodeValue;
+		}
+		catch(err) {
+			additional = "";
+		}
+		txt += "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)'>" + text + "</label><br>";
+		dict[text] = {url, additional};
 	}
 
-    function processTheRow(row, dict, name, txt){
-    	var text, url, additional;
-    	if(row.values[0]){
-    		text = row.values[0].formattedValue;
-    	} else {
-    		return;
-    	}
-    	if(row.values[1]){
-    		url = row.values[1].formattedValue;
-    	} else {
-    		return;
-    	}
-    	if(row.values[2]) {
-    		additional = row.values[2].formattedValue;
-    	} else {
-    		additional = '';
-    	}
-    	dict[text] = {url, additional};
-		return "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)'>" + text + "</label><br>";
-		
-		
-    }
+	var btn = document.createElement("BUTTON");
+	btn.innerHTML = title;
+	btn.name = "topButton";
+	btn.style.order = order;
+	btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone, target);};
+	document.getElementById("buttons").appendChild(btn);
 
-    function splitString(str){
-    	var splitStr = str.split(":");
-    	return splitStr[splitStr.length - 1];
-    }
-
-
-    function initClient() {
-      var API_KEY = 'AIzaSyCFTUcy8eaV_TZRpBgGf-BOwcifdRNVbz0';  
-
-      var CLIENT_ID = '278405626851-klte5l935n60e8p7tjihorh9601oemr2.apps.googleusercontent.com';  
-
-      // TODO: Authorize using one of the following scopes:
-      //   'https://www.googleapis.com/auth/drive'
-      //   'https://www.googleapis.com/auth/drive.file'
-      //   'https://www.googleapis.com/auth/drive.readonly'
-      //   'https://www.googleapis.com/auth/spreadsheets'
-      //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-      var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-
-      gapi.client.init({
-        'apiKey': API_KEY,
-        'clientId': CLIENT_ID,
-        'scope': SCOPE,
-        'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-      }).then(function() {
-      	makeApiCall();
-      });
-    }
-
-    function handleClientLoad() {
-      gapi.load('client:auth2', initClient);
-    }
+}
 
 
 
 
 
-
-
-    function generateLinks(name, dict, target) {
+function generateLinks(name, dict, target) {
 	var checkboxes = document.getElementsByName(name);
 	var output = document.getElementById("output");
 	var preface = "";
@@ -207,6 +178,7 @@ function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, bays
 
 	var first = true;
 
+	
 	if(officite){
 		if(first){
 			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "' checked> officite </label>" + checkboxesElement.innerHTML;
@@ -284,4 +256,3 @@ function copyText(){
     sel.addRange(range);
     document.execCommand('copy');
 }
-
