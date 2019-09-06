@@ -40,16 +40,27 @@
 
     		if(firstRow.values[k].formattedValue.includes('=')){
     			if(firstRow.values[k].formattedValue.toLowerCase().includes('target')){
-    				target = getTarget(firstRow.values[k].formattedValue);
+    				try{
+    					target = getTarget(firstRow.values[k].formattedValue);
+    				} catch(e) {
+    					console.log("Sheet " + title + " has an invalid target property.")
+    				}
     			} else {
-    				getPrepend(firstRow.values[k].formattedValue, prepend);
-    				console.log(prepend);
+    				try {
+    					getPrepend(firstRow.values[k].formattedValue, prepend);
+    				} catch(e){
+    					console.log("Sheet " + title + " has an invalid prepend property at column " + k);
+    				}
     			}
     		}
     	}
 
     	for(var j = 2; j < rows.length; j++){
-    		txt += processTheRow(rows[j], dict, name, txt);
+    		try{
+    			txt += processTheRow(rows[j], dict, name, txt);
+    		} catch(e) {
+    			console.log("Row: " + j + " is invalid formatting. It will be skipped");
+    		}
     	}
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = title;
