@@ -88,7 +88,7 @@
     function getPrepend(str, prepend){
     	console.log(str);
     	var splitStr = str.split("=");
-    	prepend[splitStr[0]] = splitStr[1];
+    	prepend[splitStr[0]] = {splitStr[1]};
     }
 
 
