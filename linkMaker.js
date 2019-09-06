@@ -59,7 +59,7 @@
     		}
     	}
 
-    	for(var j = 2; j < rows.length; j++){
+    	for(var j = 1; j < rows.length; j++){
     		try{
     			txt += processTheRow(rows[j], dict, name, txt);
     		} catch(e) {
