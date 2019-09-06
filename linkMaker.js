@@ -191,7 +191,7 @@ function copyText(){
 }
 
 
-function displayCheckboxes(text, dict, name, thisButton, prepend) {
+function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	selectButton(thisButton);
 	var generateBtn = document.createElement("BUTTON");
 	var selectAllBtn = document.createElement("BUTTON");
