@@ -25,7 +25,7 @@
     		try{
     			processTheSheet(sheets[i]);
     		} catch (e) {
-    			console.log("Sheet " + i + "is empty");
+    			console.log("Sheet " + i + " is empty");
     		}
     	}
     }
