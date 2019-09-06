@@ -34,7 +34,7 @@
     	var name = title + "Links"
     	var txt = '';
     	var target;
-    	var prepends = {};
+    	var prepend = {};
 
     	for(var k = 1; k < firstRow.values.length; k++){
 
@@ -42,7 +42,7 @@
     			if(firstRow.values[k].formattedValue.toLowerCase().includes('target')){
     				target = getTarget(firstRow.values[k].formattedValue);
     			} else {
-    				getPrepend(firstRow.values[k].formattedValue);
+    				getPrepend(firstRow.values[k].formattedValue, prepend);
     			}
     		}
     	}
@@ -88,7 +88,8 @@
     function getPrepend(str, prepend){
     	console.log(str);
     	var splitStr = str.split("=");
-    	prepend[splitStr[0]] = {splitStr[1]};
+    	console.log(splitStr);
+    	prepend[splitStr[0]] = splitStr[1];
     }
 
 
