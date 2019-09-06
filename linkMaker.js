@@ -34,6 +34,9 @@
     	var rows = sheet.data[0].rowData;
     	var firstRow = rows[0];
     	var title = firstRow.values[0].formattedValue;
+    	if(!title) {
+    		throw 1;
+    	}
     	var dict = {};
     	var name = title + "Links"
     	var txt = '';
