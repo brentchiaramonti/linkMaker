@@ -43,6 +43,7 @@
     				target = getTarget(firstRow.values[k].formattedValue);
     			} else {
     				getPrepend(firstRow.values[k].formattedValue, prepend);
+    				console.log(prepend);
     			}
     		}
     	}
@@ -86,9 +87,7 @@
     	return splitStr[splitStr.length - 1];
     }
     function getPrepend(str, prepend){
-    	console.log(str);
     	var splitStr = str.split("=");
-    	console.log(splitStr);
     	prepend[splitStr[0]] = splitStr[1];
     }
 
