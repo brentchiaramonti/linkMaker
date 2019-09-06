@@ -33,18 +33,17 @@
     	var dict = {};
     	var name = title + "Links"
     	var txt = '';
-    	var target, officite, dentrix, baystone;
+    	var target;
+    	var prepends = {};
 
     	for(var k = 1; k < firstRow.values.length; k++){
 
-    		if(firstRow.values[k].formattedValue.includes('target')){
-    			target = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Officite')){
-    			officite = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Dentrix')){
-    			dentrix = splitString(firstRow.values[k].formattedValue);
-    		} else if(firstRow.values[k].formattedValue.includes('Baystone')){
-    			baystone = splitString(firstRow.values[k].formattedValue);
+    		if(firstRow.values[k].formattedValue.includes('=')){
+    			if(firstRow.values[k].formattedValue.toLowerCase().includes('target')){
+    				target = getTarget(firstRow.values[k].formattedValue);
+    			} else {
+    				getPrepend(firstRow.values[k].formattedValue);
+    			}
     		}
     	}
 
@@ -54,7 +53,7 @@
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = title;
 		btn.name = "topButton";
-		btn.onclick = function() {displayCheckboxes(txt, dict, name, this, officite, dentrix, baystone, target);};
+		btn.onclick = function() {displayCheckboxes(txt, dict, name, this, prepend);};
 		document.getElementById("buttons").appendChild(btn);
 
 	}
@@ -82,9 +81,13 @@
 		
     }
 
-    function splitString(str){
-    	var splitStr = str.split(":");
+    function getTarget(str){
+    	var splitStr = str.split("=");
     	return splitStr[splitStr.length - 1];
+    }
+    function getPrepend(str, prepend){
+    	var splitStr = str.split("=");
+    	prepend[splitStr[0]] = splitStr[1];
     }
 
 
@@ -186,7 +189,7 @@ function copyText(){
 }
 
 
-function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, baystone, target) {
+function displayCheckboxes(text, dict, name, thisButton, prepend) {
 	selectButton(thisButton);
 	var generateBtn = document.createElement("BUTTON");
 	var selectAllBtn = document.createElement("BUTTON");
@@ -207,28 +210,14 @@ function displayCheckboxes(text, dict, name, thisButton, officite, dentrix, bays
 
 	var first = true;
 
-	if(officite){
-		if(first){
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "' checked> officite </label>" + checkboxesElement.innerHTML;
-			first = false;
-		}else{
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + officite + "'> officite </label>" + checkboxesElement.innerHTML;	
-		}
-	}
-	if(dentrix){
-		if(first){
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "' checked> dentrix </label>" + checkboxesElement.innerHTML;
-			first = false;
-		}else{
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + dentrix + "'> dentrix </label>" + checkboxesElement.innerHTML;
-		}
-	}
-	if(baystone){
-		if(first){
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "' checked> baystone </label>" + checkboxesElement.innerHTML;
-			first = false;
-		}else{
-			checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + baystone + "'> baystone </label>" + checkboxesElement.innerHTML;
+	for(var p in prepend){
+		if(prepend.hasOwnProperty(p)){
+			if(first){
+				checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + prepend[p] + "' checked>'" + p + "'</label>" + checkboxesElement.innerHTML;
+				first = false;
+			}else{
+				checkboxesElement.innerHTML = "<label class='portal'><input type='radio' id='radio' name='" + name + "-radio' value='" + prepend[p] + "'>'" + p + "'</label>" + checkboxesElement.innerHTML;	
+			}
 		}
 	}
 
