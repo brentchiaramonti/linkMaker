@@ -54,7 +54,7 @@
 		var btn = document.createElement("BUTTON");
 		btn.innerHTML = title;
 		btn.name = "topButton";
-		btn.onclick = function() {displayCheckboxes(txt, dict, name, this, prepend);};
+		btn.onclick = function() {displayCheckboxes(txt, dict, name, this, target, prepend);};
 		document.getElementById("buttons").appendChild(btn);
 
 	}
