@@ -76,16 +76,8 @@
 
     function processTheRow(row, dict, name, txt){
     	var text, url, additional;
-    	if(row.values[0]){
-    		text = row.values[0].formattedValue;
-    	} else {
-    		return;
-    	}
-    	if(row.values[1]){
-    		url = row.values[1].formattedValue;
-    	} else {
-    		return;
-    	}
+		text = row.values[0].formattedValue;
+		url = row.values[1].formattedValue;
     	if(row.values[2]) {
     		additional = row.values[2].formattedValue;
     	} else {
