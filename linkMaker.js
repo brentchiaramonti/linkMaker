@@ -78,11 +78,11 @@
     	var text, url, additional;
 		text = row.values[0].formattedValue;
 		if(!text){
-			throw;
+			throw 1;
 		}
 		url = row.values[1].formattedValue;
 		if(!url){
-			throw;
+			throw 1;
 		}
     	if(row.values[2]) {
     		additional = row.values[2].formattedValue;
