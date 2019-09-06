@@ -28,7 +28,7 @@
     			console.log("Sheet " + i + " is empty");
     		}
     	}
-    	document.getElementById('loading').add('hidden');
+    	document.getElementById('loading').classList.add('hidden');
     }
 
     function processTheSheet(sheet){
