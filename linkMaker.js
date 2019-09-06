@@ -22,7 +22,11 @@
     function processTheResponse(input){
     	var sheets = input.sheets;
     	for(var i = 0; i < sheets.length; i++){
-    		processTheSheet(sheets[i]);
+    		try{
+    			processTheSheet(sheets[i]);
+    		} catch (e) {
+    			console.log("Sheet " + i + "is empty");
+    		}
     	}
     }
 
