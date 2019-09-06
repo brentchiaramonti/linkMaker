@@ -65,3 +65,12 @@ label.portal {
 pre#output {
     white-space: pre-wrap;
 }
+
+.loading {
+	font-size: 30px;
+	text-align: center;
+}
+
+.hidden {
+	display: none!important;
+}
