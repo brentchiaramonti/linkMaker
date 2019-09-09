@@ -99,7 +99,7 @@
 		
     }
 
-    function copyLink(thisCheckbox, value){
+    function copyLink(name, value){
     	var textArea = document.getElementById('hidden-text-area');
 		var radioButtons = document.getElementsByName(name + "-radio");
 		var i;
