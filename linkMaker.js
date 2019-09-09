@@ -94,14 +94,22 @@
     		additional = '';
     	}
     	dict[text] = {url, additional};
-		return "<label oncontextmenu='copyLink(" + name + ", " + dict +");return false;><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label><br>";
+		return "<label oncontextmenu='copyLink(" + name + ", " + dict[name]["url"] +");return false;><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label><br>";
 		
 		
     }
 
-    function copyLink(thisCheckbox, dict){
+    function copyLink(thisCheckbox, value){
     	var textArea = document.getElementById('hidden-text-area');
-    	textArea.value = dict[thisCheckbox.name]["url"];
+		var radioButtons = document.getElementsByName(name + "-radio");
+		var i;
+		var preface = "";
+		for(i = 0; i < radioButtons.length; i++){
+			if(radioButtons[i].checked){
+				preface = radioButtons[i].value;
+			}
+		}
+		textArea.value = preface + value;
     	textArea.select();
     	document.execCommand('copy');
     	console.log("well at least its running");
