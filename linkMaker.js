@@ -104,6 +104,7 @@
     	textArea.value = dict[thisCheckbox.name]["url"];
     	textArea.select();
     	document.execCommand('copy');
+    	console.log("well at least its running");
     	return false;
     }
 
