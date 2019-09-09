@@ -94,9 +94,17 @@
     		additional = '';
     	}
     	dict[text] = {url, additional};
-		return "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)'>" + text + "</label><br>";
+		return "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' oncontextmenu='copyLink(this, dict);return false;'>" + text + "</label><br>";
 		
 		
+    }
+
+    function copyLink(thisCheckbox, dict){
+    	var textArea = document.getElementById('hidden-text-area');
+    	textArea.value = dict[thisCheckbox.name]["url"];
+    	textArea.select();
+    	document.execCommand('copy');
+    	return false;
     }
 
     function getTarget(str){
