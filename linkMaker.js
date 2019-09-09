@@ -94,7 +94,7 @@
     		additional = '';
     	}
     	dict[text] = {url, additional};
-		return "<label><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' oncontextmenu='copyLink(this, dict);return false;'>" + text + "</label><br>";
+		return "<label oncontextmenu='copyLink(" + name + ", " + dict +");return false;><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label><br>";
 		
 		
     }
