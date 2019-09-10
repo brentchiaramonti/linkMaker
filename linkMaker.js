@@ -240,10 +240,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	var checkboxesElement = document.getElementById('checkboxes');
 	checkboxesElement.innerHTML = text;
 
-	var searchBar = document.createElement("INPUT");
-	searchBar.type = "text";
-	searchBar.id = name + "-search";
-	searchBar.addEventListener("input", searchCheckboxes(this, name));
+	var searchBar = "<input type='text' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>";
 
 	//checkboxesElement.prepend(searchBar);
 
@@ -262,6 +259,8 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 
 	checkboxesElement.innerHTML = "<br>" + checkboxesElement.innerHTML;
 
+	checkboxesElement.innerHTML = checkboxesElement.innerHTML + searchBar;
+
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
 	checkboxesElement.prepend(generateBtn);
@@ -271,11 +270,9 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	document.getElementById("copyButton").classList.remove("display");
 }
 
-function searchCheckboxes(thisInput, name) {
-	console.log(thisInput);
-	try{
+function searchCheckboxes(inputID, name) {
 		var checkboxes = document.getElementsByName(name);
-		var text = thisInput.innerHTML;
+		var text = document.getElementByID(inputID).innerHTML;
 		console.log(text);
 
 		text = text.toLowerCase;
@@ -288,9 +285,6 @@ function searchCheckboxes(thisInput, name) {
 				checkboxes[i].parent.style.display = "none";
 			}
 		}
-	} catch(e) {
-
-	}
 }
 
 function highlight(element){
