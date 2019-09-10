@@ -280,7 +280,7 @@ function searchCheckboxes(inputID, name) {
 
 
 		for(var i = 0; i < checkboxes.length; i++){
-			if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase.includes(text)){
+			if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase().includes(text)){
 				checkboxes[i].parent.style.display = "";
 			} else {
 				checkboxes[i].parent.style.display = "none";
