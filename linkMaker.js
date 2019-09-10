@@ -259,7 +259,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 
 	checkboxesElement.innerHTML = "<br>" + checkboxesElement.innerHTML;
 	console.log("1");
-	checkboxesElement.innerHTML = checkboxesElement.innerHTML + searchBar;
+	checkboxesElement.innerHTML = checkboxesElement.innerHTML + "<input type='text' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>";
 
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
