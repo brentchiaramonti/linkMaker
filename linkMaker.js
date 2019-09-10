@@ -245,7 +245,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	searchBar.id = name + "-search";
 	searchBar.addEventListener("input", searchCheckboxes(this, name));
 
-	checkboxesElement.prepend(searchBar);
+	//checkboxesElement.prepend(searchBar);
 
 	var first = true;
 
