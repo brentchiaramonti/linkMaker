@@ -243,7 +243,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	var searchBar = document.createElement("INPUT");
 	searchBar.type = "text";
 	searchBar.id = name + "-search";
-	searchBar.addEventListener("input", searchCheckboxes(searchBar, name));
+	searchBar.addEventListener("input", searchCheckboxes(this, name));
 
 	checkboxesElement.prepend(searchBar);
 
@@ -272,6 +272,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 }
 
 function searchCheckboxes(thisInput, name) {
+	console.log(thisInput);
 	try{
 		var checkboxes = document.getElementsByName(name);
 		var text = thisInput.innerHTML;
@@ -288,7 +289,7 @@ function searchCheckboxes(thisInput, name) {
 			}
 		}
 	} catch(e) {
-		
+
 	}
 }
 
