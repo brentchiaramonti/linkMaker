@@ -272,9 +272,9 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 }
 
 function searchCheckboxes(thisInput, name) {
-	console.log("test");
 	var checkboxes = document.getElementsByName(name);
 	var text = thisInput.innerHTML;
+	console.log(text);
 
 	text = text.toLowerCase;
 	text = text.replace(" ", "");
