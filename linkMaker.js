@@ -274,9 +274,10 @@ function searchCheckboxes(inputID, name) {
 		var checkboxes = document.getElementsByName(name);
 		var text = document.getElementById(inputID).innerHTML;
 		console.log(text);
-
-		text = text.toLowerCase;
+		
 		text = text.replace(" ", "");
+		text = text.toLowerCase;
+
 
 		for(var i = 0; i < checkboxes.length; i++){
 			if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase.includes(text)){
