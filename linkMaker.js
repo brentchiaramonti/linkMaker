@@ -258,7 +258,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	}
 
 	checkboxesElement.innerHTML = "<br>" + checkboxesElement.innerHTML;
-
+	console.log("1");
 	checkboxesElement.innerHTML = checkboxesElement.innerHTML + searchBar;
 
 	checkboxesElement.prepend(selectNoneBtn);
