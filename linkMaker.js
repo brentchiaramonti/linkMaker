@@ -242,7 +242,8 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 
 	var searchBar = document.createElement("INPUT");
 	searchBar.type = "text";
-	searchBar.oninput = function(){searchCheckboxes(this, name);console.log("test");};
+	searchBar.id = name + "-search";
+	searchBar.oninput = function(){console.log("test");searchCheckboxes(this, name);};
 
 	checkboxesElement.prepend(searchBar);
 
