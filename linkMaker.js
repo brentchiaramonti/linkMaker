@@ -240,7 +240,11 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	var checkboxesElement = document.getElementById('checkboxes');
 	checkboxesElement.innerHTML = text;
 
+	var searchBar = document.createElement("INPUT");
+	searchBar.type = "text";
+	searchBar.oninput = function(){searchCheckboxes(this, name);};
 
+	checkboxesElement.prepend(searchBar);
 
 	var first = true;
 
@@ -264,6 +268,22 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("copyButton").classList.remove("display");
+}
+
+function searchCheckboxes(thisInput, name) {
+	var checkboxes = document.getElementsByName(name);
+	var text = thisInput.innerHTML;
+
+	text = text.toLowerCase;
+	text = text.replace(" ", "");
+
+	for(var i = 0; i < checkboxes.length; i++){
+		if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase.includes(text)){
+			checkboxes[i].parent.style.display = "";
+		} else {
+			checkboxes[i].parent.style.display = "none";
+		}
+	}
 }
 
 function highlight(element){
