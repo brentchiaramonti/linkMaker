@@ -272,19 +272,23 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 }
 
 function searchCheckboxes(thisInput, name) {
-	var checkboxes = document.getElementsByName(name);
-	var text = thisInput.innerHTML;
-	console.log(text);
+	try{
+		var checkboxes = document.getElementsByName(name);
+		var text = thisInput.innerHTML;
+		console.log(text);
 
-	text = text.toLowerCase;
-	text = text.replace(" ", "");
+		text = text.toLowerCase;
+		text = text.replace(" ", "");
 
-	for(var i = 0; i < checkboxes.length; i++){
-		if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase.includes(text)){
-			checkboxes[i].parent.style.display = "";
-		} else {
-			checkboxes[i].parent.style.display = "none";
+		for(var i = 0; i < checkboxes.length; i++){
+			if(cleanText(checkboxes[i].parent.innerHTML).toLowerCase.includes(text)){
+				checkboxes[i].parent.style.display = "";
+			} else {
+				checkboxes[i].parent.style.display = "none";
+			}
 		}
+	} catch(e) {
+		
 	}
 }
 
