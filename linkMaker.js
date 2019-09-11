@@ -280,10 +280,10 @@ function searchCheckboxes(inputID, name) {
 
 
 		for(var i = 0; i < checkboxes.length; i++){
-			if(cleanText(checkboxes[i].parent().innerHTML).toLowerCase().includes(text)){
-				checkboxes[i].parent().style.display = "";
+			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().includes(text)){
+				checkboxes[i].parentElement.style.display = "";
 			} else {
-				checkboxes[i].parent().style.display = "none";
+				checkboxes[i].parentElement.style.display = "none";
 			}
 		}
 }
