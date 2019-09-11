@@ -238,9 +238,8 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	selectNoneBtn.innerHTML = "Select None";
 
 	var checkboxesElement = document.getElementById('checkboxes');
-	checkboxesElement.innerHTML = text;
+	
 
-	var searchBar = "<input type='text' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>";
 
 	checkboxesElement.innerHTML = "<input type='text' placeholder='Type to search...' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>" + checkboxesElement.innerHTML;
 
@@ -262,6 +261,10 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
 	checkboxesElement.prepend(generateBtn);
+
+	checkboxesElement.innerHTML = "<div class='special_buttons'>" + checkboxesElement.innerHTML + "</div>";
+
+	checkboxesElement.innerHTML = checkboxesElement.innerHTML + text;
 
 
 	document.getElementById("output").innerHTML = "";
