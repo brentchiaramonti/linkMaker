@@ -242,7 +242,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 
 	var searchBar = "<input type='text' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>";
 
-	//checkboxesElement.prepend(searchBar);
+	checkboxesElement.innerHTML = "<input type='text' placeholder='Type to search...' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>" + checkboxesElement.innerHTML;
 
 	var first = true;
 
@@ -257,9 +257,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 		}
 	}
 
-	checkboxesElement.innerHTML = "<br>" + checkboxesElement.innerHTML;
-	console.log("1");
-	checkboxesElement.innerHTML = checkboxesElement.innerHTML + "<input type='text' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>";
+	
 
 	checkboxesElement.prepend(selectNoneBtn);
 	checkboxesElement.prepend(selectAllBtn);
@@ -273,11 +271,9 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 function searchCheckboxes(inputID, name) {
 		var checkboxes = document.getElementsByName(name);
 		var text = document.getElementById(inputID).value;
-		console.log(text);
 
 		text = text.replace(" ", "");
 		text = text.toLowerCase();
-
 
 		for(var i = 0; i < checkboxes.length; i++){
 			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().includes(text)){
