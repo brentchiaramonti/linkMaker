@@ -84,3 +84,7 @@ pre#output {
 .special_buttons {
 	break-inside: avoid;
 }
+
+div#special_buttons button {
+    width: 33%;
+}
