@@ -187,6 +187,8 @@
 	}
 	output.innerHTML = output.innerHTML + "&lt;/ul>"
 	document.getElementById("copyButton").classList.add("display");
+	var top = document.getElementById("copybutton").offsetTop; //Getting Y of target element
+    window.scrollTo(0, top);
 }
 
 function makeLink(name, link, extra){
