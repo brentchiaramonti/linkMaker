@@ -259,14 +259,16 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	}
 
 	
-
-	checkboxesElement.prepend(selectNoneBtn);
-	checkboxesElement.prepend(selectAllBtn);
-	checkboxesElement.prepend(generateBtn);
-
-	checkboxesElement.innerHTML = "<div class='special_buttons'>" + checkboxesElement.innerHTML + "</div>";
-
+	checkboxesElement.innerHTML = "<div class='special_buttons' id='special_buttons'>" + checkboxesElement.innerHTML + "</div>";
 	checkboxesElement.innerHTML = checkboxesElement.innerHTML + text;
+	var specialButtons = document.getElementById("special_buttons");
+	specialButtons.prepend(selectNoneBtn);
+	specialButtons.prepend(selectAllBtn);
+	specialButtons.prepend(generateBtn);
+
+	
+
+	
 
 
 	document.getElementById("output").innerHTML = "";
