@@ -80,3 +80,7 @@ pre#output {
     height: 30px;
     font-size: 23px;
 }
+
+.special_buttons {
+	break-inside: avoid;
+}
