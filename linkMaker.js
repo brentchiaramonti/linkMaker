@@ -187,7 +187,7 @@
 	}
 	output.innerHTML = output.innerHTML + "&lt;/ul>"
 	document.getElementById("copyButton").classList.add("display");
-	var top = document.getElementById("copybutton").offsetTop; //Getting Y of target element
+	var top = document.getElementById("copyButton").offsetTop; 
     window.scrollTo(0, top);
 }
 
