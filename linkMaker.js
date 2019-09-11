@@ -276,7 +276,7 @@ function searchCheckboxes(inputID, name) {
 		text = text.toLowerCase();
 
 		for(var i = 0; i < checkboxes.length; i++){
-			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().includes(text)){
+			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().replace(" ", "").includes(text)){
 				checkboxes[i].parentElement.style.display = "";
 			} else {
 				checkboxes[i].parentElement.style.display = "none";
