@@ -115,7 +115,7 @@
 
     	label.classList.remove("animation");
     	void label.offsetWidth;
-    	element.classList.add("animation");
+    	label.classList.add("animation");
 
     	return false;
     }
