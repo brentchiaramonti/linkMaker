@@ -94,12 +94,12 @@
     		additional = '';
     	}
     	dict[text] = {url, additional};
-		return "<label oncontextmenu='copyLink( \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label>";
+		return "<label oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label>";
 		
 		
     }
 
-    function copyLink(name, value){
+    function copyLink(label, name, value){
     	var textArea = document.getElementById('hidden-text-area');
 		var radioButtons = document.getElementsByName(name + "-radio");
 		var i;
@@ -112,6 +112,11 @@
 		textArea.value = preface + value;
     	textArea.select();
     	document.execCommand('copy');
+
+    	label.classList.remove("animation");
+    	void label.offsetWidth;
+    	element.classList.add("animation");
+
     	return false;
     }
 

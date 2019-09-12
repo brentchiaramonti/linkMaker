@@ -21,6 +21,7 @@ label {
     padding: 7px 5px;
     display: inline-block;
     border-radius: 5px;
+    position:relative;
 }
 
 label:hover {
@@ -87,4 +88,13 @@ pre#output {
 
 div#special_buttons button {
     width: 33%;
+}
+
+@keyframes myAnimation {
+	from {background-color: red;}
+	to {background-color: inherit;}
+}
+
+.animation {
+	animation: myAnimation 1s 1;
 }
