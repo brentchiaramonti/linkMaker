@@ -95,6 +95,15 @@ div#special_buttons button {
 	to {background-color: inherit;}
 }
 
+@keyframes myAnimation_2 {
+	from {background-color: red;}
+	to {background-color: #aaa;}
+}
+
 .animation {
-	animation: myAnimation 1s 1;
+	animation: myAnimation .3s 1;
+}
+
+.animation.active {
+	animation: myAnimation_2 .3s 1;
 }
