@@ -310,11 +310,13 @@ function highlight(element){
 function addHighlight(element){
 	var parent = element.parentElement.classList;
 	parent.add("active");
+	parent.remove("animation");
 }
 
 function removeHighlight(element){
 	var parent = element.parentElement.classList;
 	parent.remove("active");
+	parent.remove("animation");
 }
 
 function selectButton(thisButton){
