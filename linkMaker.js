@@ -303,6 +303,8 @@ function highlight(element){
 	} else {
 		parent.add("active");
 	}
+
+	parent.remove("animation");
 }
 
 function addHighlight(element){
