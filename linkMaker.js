@@ -114,10 +114,9 @@
     	document.execCommand('copy');
 
 
-		label.classList.add("animation");
+		label.classList.remove("animation");
 		void label.offsetWidth;
-    	label.classList.remove("animation");
-    	
+    	label.classList.add("animation");
     	
 
     	return false;
@@ -293,6 +292,7 @@ function searchCheckboxes(inputID, name) {
 		text = text.toLowerCase();
 
 		for(var i = 0; i < checkboxes.length; i++){
+			checkboxes[i].classList.remove("animation");
 			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().replace(" ", "").includes(text)){
 				checkboxes[i].parentElement.style.display = "";
 			} else {
