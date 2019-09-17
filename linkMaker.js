@@ -113,9 +113,12 @@
     	textArea.select();
     	document.execCommand('copy');
 
+
+		label.classList.add("animation");
+		void label.offsetWidth;
     	label.classList.remove("animation");
-    	void label.offsetWidth;
-    	label.classList.add("animation");
+    	
+    	
 
     	return false;
     }
