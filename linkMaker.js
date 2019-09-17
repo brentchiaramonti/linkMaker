@@ -245,6 +245,8 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	selectNoneBtn.innerHTML = "Select None";
 
 	var checkboxesElement = document.getElementById('checkboxes');
+
+	checkboxes.innerHTML = "";
 	
 
 
