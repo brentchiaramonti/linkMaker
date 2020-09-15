@@ -1,4 +1,45 @@
 	
+
+
+/*
+Google provided code. Appears to set up auth2.
+First part of the code that is ran and is called from the HTML
+*/
+function handleClientLoad() {
+  gapi.load('client:auth2', initClient);
+}
+
+
+
+
+/*
+Google provided code. Intializes the api request call then runs makeApiCall
+*/
+function initClient() {
+  var API_KEY = 'AIzaSyCFTUcy8eaV_TZRpBgGf-BOwcifdRNVbz0';  
+
+  var CLIENT_ID = '278405626851-klte5l935n60e8p7tjihorh9601oemr2.apps.googleusercontent.com';  
+
+  // TODO: Authorize using one of the following scopes:
+  //   'https://www.googleapis.com/auth/drive'
+  //   'https://www.googleapis.com/auth/drive.file'
+  //   'https://www.googleapis.com/auth/drive.readonly'
+  //   'https://www.googleapis.com/auth/spreadsheets'
+  //   'https://www.googleapis.com/auth/spreadsheets.readonly'
+  var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+  gapi.client.init({
+    'apiKey': API_KEY,
+    'clientId': CLIENT_ID,
+    'scope': SCOPE,
+    'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+  }).then(function() {
+  	makeApiCall();
+  });
+}
+
+
+
 /*
 Function to get the spreadsheet. Then makes a call to process the spreadsheet.
 No inputs
@@ -213,40 +254,6 @@ function getPrepend(str, prepend){
 
 
 /*
-Google provided code. Intializes the api request call then runs makeApiCall
-*/
-function initClient() {
-  var API_KEY = 'AIzaSyCFTUcy8eaV_TZRpBgGf-BOwcifdRNVbz0';  
-
-  var CLIENT_ID = '278405626851-klte5l935n60e8p7tjihorh9601oemr2.apps.googleusercontent.com';  
-
-  // TODO: Authorize using one of the following scopes:
-  //   'https://www.googleapis.com/auth/drive'
-  //   'https://www.googleapis.com/auth/drive.file'
-  //   'https://www.googleapis.com/auth/drive.readonly'
-  //   'https://www.googleapis.com/auth/spreadsheets'
-  //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-  var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-
-  gapi.client.init({
-    'apiKey': API_KEY,
-    'clientId': CLIENT_ID,
-    'scope': SCOPE,
-    'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-  }).then(function() {
-  	makeApiCall();
-  });
-}
-
-/*
-Google provided code. Appears to set up auth2.
-First part of the code that is ran and is called from the HTML
-*/
-function handleClientLoad() {
-  gapi.load('client:auth2', initClient);
-}
-
-/*
 Function to process the checked buttons on the current page and generate a list of links in html on the page
 name: The name of this group of links
 dict: The dictionary holding each link text and url
@@ -346,16 +353,6 @@ function selectNone(name){
 		checkboxes[i].checked = false;
 		removeHighlight(checkboxes[i]);
 	}
-}
-
-/*
-Function to copy the text in the output div
-No Return
-*/
-function copyText(){
-	var el = document.getElementById("output"); //Gets the output div
-	el.select(); //Selects it
-	document.execCommand('copy'); //And runs the copy command
 }
 
 /*
