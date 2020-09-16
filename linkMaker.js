@@ -148,6 +148,7 @@ function processTheSheet(sheet){
 		try{
 			txt += processTheRow(rows[j], dict, name);
 		} catch(e) {
+			console.log(e)
 			console.log("Row: " + j + " has invalid formatting. It will be skipped");
 		}
 	}
