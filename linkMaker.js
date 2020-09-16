@@ -123,13 +123,6 @@ function processTheSheet(sheet){
 			//Checks if the text 'target' is in this cell
 			if(firstRow.values[k].formattedValue.toLowerCase().includes('target')){
 
-				//Tries to set the target variable using the data provided
-				try{
-					target = getTarget(firstRow.values[k].formattedValue);
-				} catch(e) {
-					console.log("Sheet " + title + " has an invalid target property.")
-				}
-
 			//If it is anything else, sets it as a prepend
 			} else {
 				try {
@@ -194,7 +187,7 @@ function processTheRow(row, dict, name){
 	dict[text] = {"url": url, "description": description};
 
 	//returns the html for the link button
-	return "<label onclick='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
+	return "<label oncontextmenu='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
 	
 	
 }
@@ -264,15 +257,6 @@ function escapeQuotes(value) {
 	return value.replaceAll('"', '\\\"');
 }
 
-/*
-Function to process a target cell.
-str: A string object that is the contents of the target cell
-Return: The text to the right of the =.
-*/
-function getTarget(str){
-	var splitStr = str.split("=");
-	return splitStr[splitStr.length - 1];
-}
 
 /*
 Function to process a prepend cell.
@@ -286,70 +270,8 @@ function getPrepend(str, prepend){
 }
 
 
-/*
-Function to process the checked buttons on the current page and generate a list of links in html on the page
-name: The name of this group of links
-dict: The dictionary holding each link text and url
-target: The target value that will be applied to the link if set
-No Return: HTML text will be added to page
-*/
-function generateLinks(name, dict, target) {
-	var checkboxes = document.getElementsByName(name); //Gets the group of checkboxes by their shared name
-	var output = document.getElementById("output"); //Gets the output div
-	var preface = ""; //Initializes the prepend
-	var radioButtons = document.getElementsByName(name + "-radio"); //Gets the prepend radio buttons
-	
-	//Loops through the radio buttons to set a prepend if there is one
-	var i;
-	for(i = 0; i < radioButtons.length; i++){
-		if(radioButtons[i].checked){
-			preface = radioButtons[i].value;
-		}
-	}
-	var checkboxName; //Intializes the variable that will hold the link name
 
-	output.innerHTML = "&lt;ul><br/>" //Sets the innerhtml of the output with the starting part of the ul that will be displayed
 
-	//Loops through every checkbox
-	for(var i = 0; i < checkboxes.length; i++){
-		if(checkboxes[i].checked){
-			//If the checkbox is checked
-			checkboxName = cleanText(checkboxes[i].parentElement.innerHTML); //Gets the name of the link, grabs the parent of the checkbox then cleans the html so its just the text next to the checkbox
-			var url = preface + dict[checkboxName]["url"]; //Adds the prepend to the url if there is one
-			if(target){
-				output.innerHTML = output.innerHTML + makeTargetLink(checkboxName, url, target); //If there is a target, makes the link and adds it to the output html
-			} else {
-				output.innerHTML = output.innerHTML + makeLink(checkboxName, url); //If there is not a target, makes the link and adds it to the output html
-			}
-			
-		}
-	}
-	output.innerHTML = output.innerHTML + "&lt;/ul>" //Puts the end of the ul code to the output html
-	document.getElementById("copyButton").classList.add("display"); //Sets the copy button to display
-	var top = document.getElementById("copyButton").offsetTop;  //Gets the Y position of the button
-    window.scrollTo(0, top); //Scrolls the page to the button 
-}
-
-/*
-Function that makes the html for a link without a target parameter
-name: String, The text of the link
-link: String, The url of the link
-Return: String, the formated html text
-*/
-function makeLink(name, link){
-  return "&lt;li>&lt;a href=\"" + link + "\">" + name + "&lt;/a>&lt;/li><br>"
-}
-
-/*
-Function that makes the html for a link with a target parameter
-name: String, The text of the link
-link: String, The url of the link
-target: String, The target parameter
-Return: String, the formated html text
-*/
-function makeTargetLink(name, link, target){
-	return "&lt;li>&lt;a target='" + target + "' href=\"" + link + "\">" + name + "&lt;/a>&lt;/li><br>"
-}
 
 /*
 Helper function that gets the text after a tag. Used to get the text after a checkbox
@@ -360,33 +282,7 @@ function cleanText(string){
   return string.substring(start_pos);
 }
 
-/*
-Function to select every checkbox with a given name
-name: String, the name of the group of checkboxes to select
-No Return
-*/
-function selectAll(name){
-	var checkboxes = document.getElementsByName(name); //Gets the checkboxes by name
-	//Loops through each checkbox, sets its checked to be true, and sets it to be highlighted
-	for(var i = 0; i < checkboxes.length; i++){
-		checkboxes[i].checked = true;
-		addHighlight(checkboxes[i]);
-	}
-}
 
-/*
-Function to unselect every checkbox with a given name
-name: String, the name of the group of checkboxes to unselect
-No Return
-*/
-function selectNone(name){
-	var checkboxes = document.getElementsByName(name); //Gets the checkboxes by name
-	//Loops through each checkbox, sets its checked to be true, and sets it to be not highlighted
-	for(var i = 0; i < checkboxes.length; i++){
-		checkboxes[i].checked = false;
-		removeHighlight(checkboxes[i]);
-	}
-}
 
 /*
 Displays the checkbox list for a button
@@ -401,20 +297,6 @@ No Return
 function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	selectButton(thisButton); //Sets the given button to be shown as selected on the html
 
-	//Creates 3 new buttons that will be added to the page
-	var generateBtn = document.createElement("BUTTON");
-	var selectAllBtn = document.createElement("BUTTON");
-	var selectNoneBtn = document.createElement("BUTTON");
-
-	//Sets on clicks for the 3 buttons
-	generateBtn.onclick = function(){generateLinks(name, dict, target);};
-	selectAllBtn.onclick = function(){selectAll(name);};
-	selectNoneBtn.onclick = function(){selectNone(name);};
-
-	//Sets the text for each button
-	generateBtn.innerHTML = "Generate";
-	selectAllBtn.innerHTML = "Select All";
-	selectNoneBtn.innerHTML = "Select None";
 
 	//Gets the div that holds the checkboxes
 	var checkboxesElement = document.getElementById('checkboxes');
@@ -448,21 +330,11 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 		}
 	}
 
-	//Wraps the current innerhtml in a div. This is done so the search bar and additional buttons to be added later are seperate from the main checkboxes for formating reasons
-	checkboxesElement.innerHTML = "<div class='special_buttons' id='special_buttons'>" + checkboxesElement.innerHTML + "</div>";
 
 	//Adds the checkboxes to the div
 	checkboxesElement.innerHTML = checkboxesElement.innerHTML + text;
 
-	//adds the 3 buttons made earlier to the html in the special buttons div
-	var specialButtons = document.getElementById("special_buttons");
-	specialButtons.prepend(selectNoneBtn);
-	specialButtons.prepend(selectAllBtn);
-	specialButtons.prepend(generateBtn);
 
-	
-
-	
 
 	//Sets the output html to be empty
 	document.getElementById("output").innerHTML = "";
@@ -503,52 +375,7 @@ function searchCheckboxes(inputID, name) {
 		}
 }
 
-/*
-Function to toggle a highlight for a checkbox.
-element: The checkbox that will highlighted
-No Return
-*/
-function highlight(element){
 
-	//Gets the parent div of the button
-	var parent = element.parentElement.classList;
-
-	//Checks if the button is set to be highlighted
-	if(parent.contains("active")){
-
-		//if it is, removes the class that sets it to be highlighted
-		parent.remove("active");
-	} else {
-
-		//if it is, removes the class that sets it to be highlighted
-		parent.add("active");
-	}
-
-	//Also removes the animation class if it is on the button
-	parent.remove("animation");
-}
-
-/*
-Function to add a highlight for a checkbox.
-element: The checkbox that will highlighted
-No Return
-*/
-function addHighlight(element){
-	var parent = element.parentElement.classList; //gets the parent of the checkbox
-	parent.add("active"); //sets it to be highlighted
-	parent.remove("animation"); //removes the animation class if it does have it
-}
-
-/*
-Function to remove a highlight for a checkbox.
-element: The checkbox that will not be highlighted
-No Return
-*/
-function removeHighlight(element){
-	var parent = element.parentElement.classList; //gets the parent of the checkbox
-	parent.remove("active"); //sets it to not be highlighted
-	parent.remove("animation"); //removes the animation class if it does have it
-}
 
 /*
 Function to set a library button as active and set every other library button as not active
