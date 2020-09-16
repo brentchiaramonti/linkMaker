@@ -301,7 +301,7 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 	checkboxes.innerHTML = "";
 	
 	//Sets up a search box into the html
-	checkboxesElement.innerHTML = "<input type='text' placeholder='Type to search...' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\", \"" + name + "\")'>" + checkboxesElement.innerHTML;
+	checkboxesElement.innerHTML = "<input type='text' placeholder='Type to search...' class='search' id='" + name +"-search' oninput='searchCheckboxes(\"" + name + "-search\")'>" + checkboxesElement.innerHTML;
 
 	//A variable to make the first radio button be added differently from the rest
 	var first = true;
@@ -345,9 +345,8 @@ inputID: The id of the search box to pull the input from
 name: The name of the checkboxes to search
 No Return
 */
-function searchCheckboxes(inputID, name) {
-		console.log('test');
-		var checkboxes = document.getElementsByName(name); //Gets the checkboxes by name
+function searchCheckboxes(inputID) {
+		var checkboxes = document.querySelector('label'); //Gets the checkboxes by name
 		var text = document.getElementById(inputID).value; //Gets the text input from the search bar
 
 		text = text.replace(" ", ""); //Removes all spaces
