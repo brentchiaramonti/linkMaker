@@ -185,7 +185,7 @@ function processTheRow(row, dict, name){
 	dict[text] = {"url": url, "description": description};
 
 	//returns the html for the link button
-	return "<label oncontextmenu='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'>" + text + "</label>";
+	return "<label class='library_button' oncontextmenu='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'>" + text + "</label>";
 	
 	
 }
@@ -348,7 +348,7 @@ name: The name of the checkboxes to search
 No Return
 */
 function searchCheckboxes(inputID) {
-		var checkboxes = document.querySelectorAll('label'); //Gets the checkboxes by name
+		var checkboxes = document.querySelectorAll('label.library_button'); //Gets the checkboxes by name
 		var text = document.getElementById(inputID).value; //Gets the text input from the search bar
 
 		text = text.replace(" ", ""); //Removes all spaces
