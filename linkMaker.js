@@ -171,7 +171,8 @@ name: String, the name of this group of links
 Return: String, formated html to be added to the page
 */
 function processTheRow(row, dict, name){
-	var text, url, description;
+	var text, url;
+	var description = ''
 
 	//Graps the first cell, which will have the text of the link that will be displayed
 	text = row.values[0].formattedValue;
@@ -185,7 +186,9 @@ function processTheRow(row, dict, name){
 		throw 1;
 	}
 
-	description = row.values[2].formattedValue;
+	if(typeof row.values[2] !== 'undefined') {
+		description = row.values[2].formattedValue;
+	}
 
 	//Stores the link text and url into the link dictionary
 	dict[text] = {"url": url, "description": description};
