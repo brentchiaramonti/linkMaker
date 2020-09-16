@@ -1,6 +1,3 @@
-	
-
-
 /*
 Google provided code. Appears to set up auth2.
 First part of the code that is ran and is called from the HTML
@@ -8,9 +5,6 @@ First part of the code that is ran and is called from the HTML
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
-
-
-
 
 /*
 Google provided code. Intializes the api request call then runs makeApiCall
@@ -41,7 +35,7 @@ function initClient() {
 
 
 /*
-Function to get the spreadsheet. Then makes a call to process the spreadsheet.
+Function to get the spreadsheet. Then makes a call to process the response.
 No inputs
 No returns
 */
@@ -88,7 +82,7 @@ function processTheResponse(input){
 
 	//Once all sheets have been processed, removes the "Loading" text
 	document.getElementById('loading').classList.add('hidden');
-    }
+}
 
 
 /*
@@ -120,7 +114,7 @@ function processTheSheet(sheet){
 		//Checks if this cell is using an equals sign, otherwise it just skips the cell
 		if(firstRow.values[k].formattedValue.includes('=')){
 
-
+			//Tries to add a prepend to the prepend dictionary.
 			try {
 				getPrepend(firstRow.values[k].formattedValue, prepend);
 			} catch(e){
@@ -175,7 +169,10 @@ function processTheRow(row, dict, name){
 		throw 1;
 	}
 
+	//Checks if there is a 3rd cell defined
 	if(typeof row.values[2] !== 'undefined') {
+
+		//checks to make sure there is actual content in the cell
 		if(typeof row.values[2].formattedValue !== 'undefined') {
 			description = escapeQuotes(row.values[2].formattedValue);
 		}
@@ -251,6 +248,11 @@ function copyDescription(label, value){
 }
 
 
+/*
+Function to add \ in front of quote marks so they can be added to the html without breaking the javascript
+value: The text that will be processed.
+Return: String value
+*/
 function escapeQuotes(value) {
 	return value.replaceAll('"', '\\\"');
 }
@@ -266,20 +268,6 @@ function getPrepend(str, prepend){
 	var splitStr = str.split("=");
 	prepend[splitStr[0]] = splitStr[1];
 }
-
-
-
-
-
-/*
-Helper function that gets the text after a tag. Used to get the text after a checkbox
-Return: String, The text after the end of the first tag in the text
-*/
-function cleanText(string){
-  var start_pos = string.indexOf('>') + 1;
-  return string.substring(start_pos);
-}
-
 
 
 /*
@@ -344,7 +332,6 @@ function displayCheckboxes(text, dict, name, thisButton, target, prepend) {
 /*
 Searches the checkbox text for a given value. Is not case sensitive and ignores blank spaces
 inputID: The id of the search box to pull the input from
-name: The name of the checkboxes to search
 No Return
 */
 function searchCheckboxes(inputID) {
