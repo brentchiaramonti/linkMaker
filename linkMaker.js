@@ -346,7 +346,7 @@ name: The name of the checkboxes to search
 No Return
 */
 function searchCheckboxes(inputID) {
-		var checkboxes = document.querySelector('label'); //Gets the checkboxes by name
+		var checkboxes = document.querySelectorAll('label'); //Gets the checkboxes by name
 		var text = document.getElementById(inputID).value; //Gets the text input from the search bar
 
 		text = text.replace(" ", ""); //Removes all spaces
