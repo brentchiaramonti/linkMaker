@@ -352,6 +352,8 @@ function searchCheckboxes(inputID) {
 		text = text.replace(" ", ""); //Removes all spaces
 		text = text.toLowerCase(); //Sets the text to all lowercase to make it not case sensitive
 
+		console.log(checkboxes.length)
+
 		//Loops through every checkbox
 		for(var i = 0; i < checkboxes.length; i++){
 
@@ -359,14 +361,14 @@ function searchCheckboxes(inputID) {
 			checkboxes[i].classList.remove("animation");
 
 			//Checkes if the checkbox text includes the given text after being cleaned, removed spaces, and made lowercase
-			if(checkboxes[i].parentElement.innerHTML.toLowerCase().replace(" ", "").includes(text)){
+			if(checkboxes[i].innerHTML.toLowerCase().replace(" ", "").includes(text)){
 
 				//if it does, sets it to display
-				checkboxes[i].parentElement.style.display = "";
+				checkboxes[i].style.display = "";
 			} else {
 
 				//if it doesn't, sets it to not display
-				checkboxes[i].parentElement.style.display = "none";
+				checkboxes[i].style.display = "none";
 			}
 		}
 }
