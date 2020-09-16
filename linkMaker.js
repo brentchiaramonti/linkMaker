@@ -175,8 +175,7 @@ function processTheRow(row, dict, name){
 		throw 1;
 	}
 
-	console.log(row.values[2]);
-	if(typeof row.values[2] !== 'undefined') {
+	if(typeof row.values[2].formattedValue !== 'undefined') {
 		description = escapeQuotes(row.values[2].formattedValue);
 	}
 
