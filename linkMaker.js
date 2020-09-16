@@ -170,7 +170,7 @@ name: String, the name of this group of links
 Return: String, formated html to be added to the page
 */
 function processTheRow(row, dict, name){
-	var text, url;
+	var text, url, description;
 
 	//Graps the first cell, which will have the text of the link that will be displayed
 	text = row.values[0].formattedValue;
@@ -184,11 +184,13 @@ function processTheRow(row, dict, name){
 		throw 1;
 	}
 
+	description = row.values[2].formattedValue;
+
 	//Stores the link text and url into the link dictionary
-	dict[text] = {url};
+	dict[text] = {[url, description]};
 
 	//returns the html for the link button
-	return "<label oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" onclick='highlight(this)' '>" + text + "</label>";
+	return "<label onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["description"] +"\");return false;'  oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
 	
 	
 }
