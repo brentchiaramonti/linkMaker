@@ -261,7 +261,7 @@ function copyDescription(label, value){
 
 
 function escapeQuotes(value) {
-	return value.replace('"', '\\\"');
+	return value.replaceAll('"', '\\\"');
 }
 
 /*
