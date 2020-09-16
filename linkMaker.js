@@ -187,7 +187,7 @@ function processTheRow(row, dict, name){
 	}
 
 	if(typeof row.values[2] !== 'undefined') {
-		description = row.values[2].formattedValue;
+		description = escapeQuotes(row.values[2].formattedValue);
 	}
 
 	//Stores the link text and url into the link dictionary
