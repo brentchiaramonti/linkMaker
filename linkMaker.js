@@ -187,7 +187,7 @@ function processTheRow(row, dict, name){
 	description = row.values[2].formattedValue;
 
 	//Stores the link text and url into the link dictionary
-	dict[text] = {[url, description]};
+	dict[text] = {"url": url, "description": description};
 
 	//returns the html for the link button
 	return "<label onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["description"] +"\");return false;'  oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
