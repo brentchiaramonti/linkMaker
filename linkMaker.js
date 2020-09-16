@@ -187,7 +187,7 @@ function processTheRow(row, dict, name){
 	dict[text] = {"url": url, "description": description};
 
 	//returns the html for the link button
-	return "<label oncontextmenu='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
+	return "<label oncontextmenu='copyDescription(this, \"" + dict[text]["description"] +"\");return false;'  onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'>" + text + "</label>";
 	
 	
 }
