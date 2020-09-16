@@ -120,17 +120,13 @@ function processTheSheet(sheet){
 		//Checks if this cell is using an equals sign, otherwise it just skips the cell
 		if(firstRow.values[k].formattedValue.includes('=')){
 
-			//Checks if the text 'target' is in this cell
-			if(firstRow.values[k].formattedValue.toLowerCase().includes('target')){
 
-			//If it is anything else, sets it as a prepend
-			} else {
-				try {
-					getPrepend(firstRow.values[k].formattedValue, prepend);
-				} catch(e){
-					console.log("Sheet " + title + " has an invalid prepend property at column " + k);
-				}
+			try {
+				getPrepend(firstRow.values[k].formattedValue, prepend);
+			} catch(e){
+				console.log("Sheet " + title + " has an invalid prepend property at column " + k);
 			}
+
 		}
 	}
 
@@ -363,7 +359,7 @@ function searchCheckboxes(inputID, name) {
 			checkboxes[i].classList.remove("animation");
 
 			//Checkes if the checkbox text includes the given text after being cleaned, removed spaces, and made lowercase
-			if(cleanText(checkboxes[i].parentElement.innerHTML).toLowerCase().replace(" ", "").includes(text)){
+			if(checkboxes[i].parentElement.innerHTML.toLowerCase().replace(" ", "").includes(text)){
 
 				//if it does, sets it to display
 				checkboxes[i].parentElement.style.display = "";
