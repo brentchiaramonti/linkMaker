@@ -187,14 +187,14 @@ function processTheRow(row, dict, name){
 	}
 
 	if(typeof row.values[2] !== 'undefined') {
-		description = row.values[2].formattedValue;
+		description = escapeQuotes(row.values[2].formattedValue);
 	}
 
 	//Stores the link text and url into the link dictionary
 	dict[text] = {"url": url, "description": description};
 
 	//returns the html for the link button
-	return "<label onclick='copyLink(this, \"" + name + "\", \"" + dict[text]["description"] +"\");return false;'  oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
+	return "<label onclick='copyLink(this, \"" + dict[text]["description"] +"\");return false;'  oncontextmenu='copyLink(this, \"" + name + "\", \"" + dict[text]["url"] +"\");return false;'><input type=\"checkbox\" name=\"" + name + "\" '>" + text + "</label>";
 	
 	
 }
@@ -236,6 +236,33 @@ function copyLink(label, name, value){
 	return false;
 }
 
+/*
+Function to be added to an individual link button. Takes the link on the button and copies it to the user's clipboard
+Label: The label object that was clicked. Used to set animations
+Value: The description as text to be copied
+No return
+*/
+function copyDescription(label, value){
+	var textArea = document.getElementById('hidden-text-area'); //Gets the hidden textarea on the html to store the text to copy
+
+	
+	textArea.value = value; //sets the text area's text to be the link
+	textArea.select(); //Selects the text in the text area
+	document.execCommand('copy'); //Runs the copy command, copying the text in the text area
+
+
+	label.classList.remove("animation"); //Removes the animation class if there is any
+	void label.offsetWidth; //A trick to allow an animation to be removed and readded to an object and let the animation still play
+	label.classList.add("animation"); //Adds the animation class to the label
+	
+
+	return false;
+}
+
+
+function escapeQuotes(value) {
+	return value.replace('"', '&quot;')
+}
 
 /*
 Function to process a target cell.
