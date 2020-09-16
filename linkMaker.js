@@ -175,6 +175,7 @@ function processTheRow(row, dict, name){
 		throw 1;
 	}
 
+	console.log(row.values[2]);
 	if(typeof row.values[2] !== 'undefined') {
 		description = escapeQuotes(row.values[2].formattedValue);
 	}
@@ -351,8 +352,6 @@ function searchCheckboxes(inputID) {
 
 		text = text.replace(" ", ""); //Removes all spaces
 		text = text.toLowerCase(); //Sets the text to all lowercase to make it not case sensitive
-
-		console.log(checkboxes.length)
 
 		//Loops through every checkbox
 		for(var i = 0; i < checkboxes.length; i++){
