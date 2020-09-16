@@ -138,7 +138,7 @@ function processTheSheet(sheet){
 			txt += processTheRow(rows[j], dict, name);
 		} catch(e) {
 			console.log(e)
-			console.log("Row: " + j + " has invalid formatting. It will be skipped");
+			console.log(name + " Row: " + j + " has invalid formatting. It will be skipped");
 		}
 	}
 
@@ -346,6 +346,7 @@ name: The name of the checkboxes to search
 No Return
 */
 function searchCheckboxes(inputID, name) {
+		console.log('test');
 		var checkboxes = document.getElementsByName(name); //Gets the checkboxes by name
 		var text = document.getElementById(inputID).value; //Gets the text input from the search bar
 
