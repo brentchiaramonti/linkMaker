@@ -254,7 +254,7 @@ value: The text that will be processed.
 Return: String value
 */
 function escapeQuotes(value) {
-	return value.replaceAll('"', '\\\"');
+	return value.replaceAll('"', '\\\"').replaceAll("'", "\\\'");
 }
 
 
